@@ -1,0 +1,8 @@
+<div style="margin:80px">
+    <h2>Напишите нам, если у вас есть вопросы</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Отправить</button>
+    </form>
+</div>
