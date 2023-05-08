@@ -1,8 +1,30 @@
-<div style="margin:80px">
+<div>
     <h2>Напишите нам, если у вас есть вопросы</h2>
-    <form method="post">
+    {% if form.errors %}
+            {% for field in form %} <!-- вывод ошибок для каждого поля, если они есть-->
+              {% for error in field.errors %}            
+                  {{ error|escape }}
+              {% endfor %}
+            {% endfor %}
+            {% for error in form.non_field_errors %}
+                {{ error|escape }}
+            {% endfor %}
+          {% endif %}
+    <form method="post" action='{% url 'success' %}'>
         {% csrf_token %}
-        {{ form.as_p }}
+        <div style="margin:40px">
+            {{form.first_name}} <!--Имя-->
+            {{form.legal_entity}} <!--Юридическое лицо-->
+            {{form.inn}} <!--ИНН-->
+            {{form.phone_number}}<!--Номер телефона-->
+            {{form.e_mail}}<!--Электронная почта-->
+            {{form.region}}<!--Регион-->
+            {{form.sales_channel}}<!--Канал продаж-->
+            {{form.nalog}}<!--Налог-->
+            {{form.theme}}<!--Тема сообщения-->
+            {{form.text}}<!--Сообщение-->
+            {{ form.rules }} <label for='{{ form.rules }}'> Я принимаю условия пользовательского соглашения </label>
+        </div>
         <button type="submit">Отправить</button>
     </form>
 </div>

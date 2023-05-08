@@ -22,7 +22,8 @@ def index(request):
             message = '\n'.join(body.values())
             try:
                 send_mail(subject,
-                          message, body['e_mail'], 'vlaldis@yandex.ru')
+                          message, body['e_mail'], 'admin@example.com',
+                          ['admin@example.com'])
             except BadHeaderError:
                 return HttpResponse('Ошибка в письмe.')
             return redirect('success')
