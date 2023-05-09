@@ -7,7 +7,17 @@
 </head>
 <div class="contact">
   <h2 class="contact__title">Напишите нам, если у вас есть вопросы</h2>
-  <form name="contact_form" method="post" class='form contact__form' action= {% url 'index' %} novalidate style="margin: 40px auto;">
+  {% if form.errors %}
+  {% for field in form %} <!-- вывод ошибок для каждого поля, если они есть-->
+    {% for error in field.errors %}
+        {{ error|escape }}
+    {% endfor %}
+  {% endfor %}
+  {% for error in form.non_field_errors %}
+      {{ error|escape }}
+  {% endfor %}
+  {% endif %}
+  <form name="contact_form" method="post" class='form contact__form' novalidate style="margin: 40px auto;">
     {% csrf_token %}
     <div class='contact__container'>
       {{form.first_name}} <!--Имя-->

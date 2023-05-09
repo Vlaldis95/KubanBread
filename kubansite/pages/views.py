@@ -2,6 +2,7 @@ from django.shortcuts import redirect, render
 from pages.forms import ContactForm
 from django.core.mail import BadHeaderError, send_mail
 from django.http import HttpResponse
+from kubansite.settings import RECIPIENTS_EMAIL
 
 
 def success_view(request):
@@ -9,12 +10,9 @@ def success_view(request):
 
 
 def index(request):
-    if request.method == 'GET':
-        form = ContactForm()
-    elif request.method == 'POST':
+    if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
-            subject = 'Сообщение с контактной формы сайта'
             body = {'first_name': form.cleaned_data['first_name'],
                     'legal_entity': form.cleaned_data['legal_entity'],
                     'inn': form.cleaned_data['inn'],
@@ -24,17 +22,25 @@ def index(request):
                     'sales_channel': form.cleaned_data['sales_channel'],
                     'nalog': form.cleaned_data['nalog'],
                     'theme': form.cleaned_data['theme'],
-                    'text': form.cleaned_data['text'],
-                    'rules': form.cleaned_data['rules']}
-            message = '\n'.join(body.values())
+                    'text': form.cleaned_data['text']}
+            ln = '\n'
+            message = (f"Имя:{body['first_name']}{ln}"
+                       f"Юр.лицо: {body['legal_entity']}{ln}"
+                       f"ИНН:{body['inn']}{ln}"
+                       f"Номер телефона:{body['phone_number']}{ln}"
+                       f"e-mail:{body['e_mail']}{ln}"
+                       f"Регион:{body['region']}{ln}"
+                       f"Канал продаж:{body['sales_channel']}{ln}"
+                       f"Вид налога:{body['nalog']}{ln}"
+                       f"Тема сообщения:{body['theme']}{ln}"
+                       f"Текст сообщения:{body['text']}")
             try:
-                send_mail(subject,
+                send_mail('Сообщение с контактной формы сайта',
                           message,
-                          f"{body['first_name']} {body['email']}",
-                          ['vlaldis@yandex.ru'])
-                return redirect('success')
+                          body['e_mail'],
+                          RECIPIENTS_EMAIL)
             except BadHeaderError:
-                return HttpResponse('Найден некорретный заголовок')
-    else:
-        return HttpResponse('Неверный запрос.')
+                return HttpResponse('Найден некорректный заголовок')
+            return redirect('success')
+    form = ContactForm()
     return render(request, 'pages/index.html', {'form': form})
