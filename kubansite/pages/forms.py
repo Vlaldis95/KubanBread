@@ -11,9 +11,9 @@ class ContactForm(forms.Form):
     legal_entity = forms.CharField(
         widget=forms.TextInput(
             attrs={'placeholder': 'Юридическое лицо'}))  # Юридическое лицо
-    inn = forms.IntegerField(
-        widget=forms.NumberInput(
-            attrs={'placeholder': 'ИНН'}), max_value=999999999999)  # ИНН
+    inn = forms.CharField(
+        widget=forms.TextInput(
+            attrs={'placeholder': 'ИНН', 'class': 'form__input'}), max_length=12)  # ИНН
     phone_number = forms.CharField(widget=forms.TextInput(
             attrs={'placeholder': '+7-999-999-99-99'}))  # Номер телефона
     e_mail = forms.EmailField(widget=forms.EmailInput(
@@ -31,5 +31,4 @@ class ContactForm(forms.Form):
     text = forms.CharField(
         widget=forms.Textarea(
             attrs={'placeholder': 'Сообщение'}), max_length=100)
-    rules = forms.BooleanField(
-        label='Я принимаю условия пользовательского солгашения')
+    rules = forms.BooleanField(label ='Я принимаю условия пользовательского солгашения')
