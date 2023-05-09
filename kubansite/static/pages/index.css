@@ -1,0 +1,29 @@
+/* Нормализация стилей */
+@import url('../vendor/normalize.css');
+
+/* Миксы */
+@import url('../blocks/btn/btn.css');
+
+/* Блок root */
+@import url('../blocks/root/root.css');
+
+/* Блок content */
+@import url('../blocks/content/content.css');
+
+/* Блок form */
+@import url('../blocks/form/form.css');
+@import url('../blocks/form/__input/form__input.css');
+@import url('../blocks/form/__input/_type/form__input_type_error.css');
+@import url('../blocks/form/__input-error/form__input-error.css');
+@import url('../blocks/form/__input-error/_visible/form__input-error_visible.css');
+@import url('../blocks/form/__select/form__select.css');
+@import url('../blocks/form/__submit/form__submit.css');
+@import url('../blocks/form/__submit/_disabled/form__submit_disabled.css');
+
+
+/* Блок contact */
+@import url('../blocks/contact/__form/contact__form.css');
+@import url('../blocks/contact/__checkbox/contact__checkbox.css');
+@import url('../blocks/contact/__label/contact__label.css');
+@import url('../blocks/contact/__title/contact__title.css');
+
