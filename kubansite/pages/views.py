@@ -1,11 +1,17 @@
 from django.shortcuts import redirect, render
 from pages.forms import ContactForm
-from django.core.mail import send_mail, BadHeaderError
+from django.core.mail import BadHeaderError, send_mail
 from django.http import HttpResponse
 
 
+def success_view(request):
+    return HttpResponse('Приняли! Спасибо за вашу заявку.')
+
+
 def index(request):
-    if request.method == 'POST':
+    if request.method == 'GET':
+        form = ContactForm()
+    elif request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
             subject = 'Сообщение с контактной формы сайта'
@@ -18,18 +24,17 @@ def index(request):
                     'sales_channel': form.cleaned_data['sales_channel'],
                     'nalog': form.cleaned_data['nalog'],
                     'theme': form.cleaned_data['theme'],
-                    'text': form.cleaned_data['text']}
+                    'text': form.cleaned_data['text'],
+                    'rules': form.cleaned_data['rules']}
             message = '\n'.join(body.values())
             try:
                 send_mail(subject,
-                          message, body['e_mail'], 'admin@example.com',
-                          ['admin@example.com'])
+                          message,
+                          f"{body['first_name']} {body['email']}",
+                          ['vlaldis@yandex.ru'])
+                return redirect('success')
             except BadHeaderError:
-                return HttpResponse('Ошибка в письмe.')
-            return redirect('success')
-    form = ContactForm()
+                return HttpResponse('Найден некорретный заголовок')
+    else:
+        return HttpResponse('Неверный запрос.')
     return render(request, 'pages/index.html', {'form': form})
-
-
-def success_view(request):
-    return HttpResponse('Приняли! Спасибо за вашу заявку.')
