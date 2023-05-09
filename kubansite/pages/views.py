@@ -1,12 +1,8 @@
-from django.shortcuts import redirect, render
+from django.shortcuts import render
 from pages.forms import ContactForm
 from django.core.mail import BadHeaderError, send_mail
 from django.http import HttpResponse
 from kubansite.settings import RECIPIENTS_EMAIL
-
-
-def success_view(request):
-    return HttpResponse('Приняли! Спасибо за вашу заявку.')
 
 
 def index(request):
@@ -35,12 +31,15 @@ def index(request):
                        f"Тема сообщения:{body['theme']}{ln}"
                        f"Текст сообщения:{body['text']}")
             try:
-                send_mail('Сообщение с контактной формы сайта',
+                send_mail("Message from site",
                           message,
                           body['e_mail'],
                           RECIPIENTS_EMAIL)
+                flag = True
+                form = ContactForm()
+                return render(request, 
+                              'pages/index.html', {'flag': flag, 'form': form})
             except BadHeaderError:
                 return HttpResponse('Найден некорректный заголовок')
-            return redirect('success')
     form = ContactForm()
     return render(request, 'pages/index.html', {'form': form})

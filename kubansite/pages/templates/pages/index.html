@@ -17,6 +17,9 @@
       {{ error|escape }}
   {% endfor %}
   {% endif %}
+                 {%if flag %}
+                  Спасибо! ваша заявка сохранена!
+                 {%endif%}
   <form name="contact_form" method="post" class='form contact__form' novalidate style="margin: 40px auto;">
     {% csrf_token %}
     <div class='contact__container'>
