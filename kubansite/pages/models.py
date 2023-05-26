@@ -6,7 +6,7 @@ class Category(models.Model):
     title = models.CharField(max_length=100, verbose_name='Название категории')
     slug = models.SlugField(
         unique=True,
-        help_text='Ввести краткое название на латиннце, которое будет добавляться к основному url для адреса категории')
+        help_text='Ввести краткое название на латиннице, которое будет добавляться к основному url для адреса категории')
     
     def __str__(self):
         return self.title

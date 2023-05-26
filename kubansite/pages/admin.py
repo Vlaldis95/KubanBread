@@ -1,5 +1,8 @@
 from django.contrib import admin
 from .models import Category, Product
+import django.contrib.auth.admin
+import django.contrib.auth.models
+from django.contrib import auth
 
 
 class ProductAdmin(admin.ModelAdmin):
@@ -8,14 +11,17 @@ class ProductAdmin(admin.ModelAdmin):
     list_display = ('title', 'category', 'photo', 'pub_date',
                     'packaging', 'weight', 'expiration_date', 'quantity_a')
     search_fields = ('title',)
-    list_filter = ('pub_date',)
+    list_filter = ('pub_date','title')
 
 
 class CategoryAdmin(admin.ModelAdmin):
     fields = ('title', 'slug')
     search_fields = ('title',)
     list_display = ('id', 'title')
+    list_filter = ('title',)
 
 
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(Product, ProductAdmin)
+admin.site.unregister(auth.models.User)
+admin.site.unregister(auth.models.Group)
