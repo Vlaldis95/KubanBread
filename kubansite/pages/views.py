@@ -6,6 +6,12 @@ from kubansite.settings import RECIPIENTS_EMAIL
 
 
 def index(request):
+    """Главная страница"""
+    return render(request, 'pages/index.html')
+
+
+def contacts(request):
+    """Страница контакты и с формой обратной связи"""
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
@@ -37,9 +43,14 @@ def index(request):
                           RECIPIENTS_EMAIL)
                 flag = True
                 form = ContactForm()
-                return render(request, 
+                return render(request,
                               'pages/index.html', {'flag': flag, 'form': form})
             except BadHeaderError:
                 return HttpResponse('Найден некорректный заголовок')
     form = ContactForm()
-    return render(request, 'pages/index.html', {'form': form})
+    return render(request, 'pages/contacts.html', {'form': form})
+
+
+def katalog(request):
+    """Страница с каталогом."""
+    return render(request, 'pages/katalog.html')
