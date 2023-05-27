@@ -5,4 +5,5 @@
   text-rendering: optimizeLegibility;
   background-color: #0C0500;
   overflow-x: hidden;
+  position: relative;
 }
