@@ -1,0 +1,13 @@
+.guarantee__text {
+  max-width: 900px;
+  text-align: center;
+  color: #FFFCF9;
+  padding: 0;
+  font-size: 20px;
+}
+
+@media screen and (max-width: 480px) {
+  .guarantee__text {
+    font-size: 16px;
+  }
+}

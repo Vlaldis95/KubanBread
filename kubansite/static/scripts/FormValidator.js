@@ -4,14 +4,27 @@ export default class FormValidator {
     this._form = form;
     this._inputList = Array.from(this._form.querySelectorAll(this._config.inputSelector));
     this._submitButton = this._form.querySelector(this._config.submitButtonSelector);
+    this._email = this._form.querySelector('#id_e_mail');
+  }
+
+  _showEmailError(errorText) {
+    switch(true) {
+      case this._email.validity.valueMissing:
+        errorText.textContent = 'Заполните это поле';
+        break;
+      case this._email.validity.patternMismatch:
+      case this._email.validity.typeMismatch:
+        errorText.textContent = 'Email-адрес должен соответствовать действительному формату';
+        break;
+    }
   }
   // функция показа ошибки при вводе неверных данных в input
   _showInputError(formInput, errorMessage) {
     const errorText = this._form.querySelector(`.${formInput.name}-error`);
-
     formInput.classList.add(this._config.inputErrorClass);
     errorText.classList.add(this._config.errorClass);
-    errorText.textContent = errorMessage;
+
+    formInput === this._email ? this._showEmailError(errorText) : errorText.textContent = errorMessage;
   }
   // функция скрытия ошибки при вводе неверных данных в input
   _hideInputError(formInput) {

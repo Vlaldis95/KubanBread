@@ -1,0 +1,12 @@
+.choose-home__item-text {
+  flex-grow: 1;
+}
+
+@media screen and (max-width: 600px) {
+  .choose-home__item-text {
+    color: #fff;
+    position: relative;
+    z-index: 1;
+    font-size: 16px;
+  }
+}

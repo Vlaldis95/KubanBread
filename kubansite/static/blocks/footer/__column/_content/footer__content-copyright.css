@@ -1,0 +1,12 @@
+.footer__column_content_copyright {
+  display: flex;
+}
+
+@media screen and (max-width: 1023px) {
+  .footer__column_content_copyright {
+    grid-column: 1 / span 2;
+    flex-basis: auto;
+    justify-self: center;
+  }
+}
+

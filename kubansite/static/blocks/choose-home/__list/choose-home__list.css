@@ -1,0 +1,21 @@
+.choose-home__list {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px 29px;
+}
+
+@media screen and (max-width: 767px) {
+  .choose-home__list {
+
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .choose-home__list {
+
+  }
+}

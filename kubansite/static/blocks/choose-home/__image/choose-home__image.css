@@ -1,0 +1,13 @@
+.choose-home__image {
+  width: 258px;
+  height: 165px;
+  object-fit: contain;
+  object-position: center;
+}
+
+ @media screen and (max-width: 540px) {
+  .choose-home__image {
+    width: 110px;
+    height: 117px;
+  }
+ }

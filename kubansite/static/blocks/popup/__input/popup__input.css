@@ -1,0 +1,22 @@
+.popup__input {
+  box-sizing: border-box;
+  border-radius: 20px;
+  padding: 16px 24px 16px 24px;
+  width: 100%;
+  margin: 10px 0 5px;
+  border: 2px solid #FFFCF9;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.popup__input::placeholder {
+  color: #c4c4c4;
+}
+
+@media screen and (max-width: 480px){
+  .popup__input {
+    padding: 10px 25px 10px 20px;
+    margin: 0;
+  }
+}

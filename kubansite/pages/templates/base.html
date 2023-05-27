@@ -1,10 +1,24 @@
 <!DOCTYPE html>
-<html>
+{% load static %}
+<html lang="ru">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta
+    name="keywords"
+    content="{% block keywords %}Default title{% endblock keywords %}">
+  <meta
+    name="description"
+    content="{% block description %}Default title{% endblock description %}">
+  <link
+    rel="stylesheet"
+    href="{% static 'pages/index.css' %}">
   <title>{% block title %}Default title{% endblock title %}</title>
 </head>
-<body>
-  <div>{% block content%}{% endblock content %}</div>
+<body class="root">
+  {% include "header.html" %}
+  {% block content%}{% endblock content %}
+  {% include "footer.html" %}
 </body>
 </html>

@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Кубанская кормилица{% endblock title %}
+{% block keywords %}кондитерские изделия, оптом, конфеты, печенье, торты{% endblock keywords %}
+{% block description %}На кондитерском производстве Кубанская кормилица вы можете приобрести по оптовым ценам
+такие изделия, как конфеты, печенье, пряники, сушки, слойки и батончики{% endblock description %}
+{% block content %}
+<main class="content">
+  <section class="rent">
+    <div class="rent__info">
+      <h1 class="section-title rent__section-title">вкус детства на&nbsp;вашем столе</h1>
+      <div class="rent__btn-container">
+        <a href="/contacts" class="btn btn-light button_type_contact">Связаться с нами</a>
+        <a href="{%static './catalog/catalog.pdf' %}" download class="btn btn-dark">Скачать каталог</a>
+      </div>
+    </div>
+    <img src="{%static './images/welcome.png'%}" alt="" class="rent__image">
+  </section>
+  <section class="guide">
+    <img class="guide__image" src="{%static './images/kolos.svg'%}" alt="колосок">
+    <p class="text guide__text">«Кубанская кормилица — кондитерское производство, которое знают и любят более 20 лет.
+      Мы заботимся о качестве нашей продукции, используем только самые свежие и качественные ингредиенты, делаем все,
+      чтобы удовлетворить вкусовые потребности наших клиентов».</p>
+  </section>
+  <section class="benefit">
+    <div class="benefit__text-container">
+      <h2 class="benefit__title section-title">наше производство</h2>
+      <p class="benefit__text text">Производство оснащено самым современным оборудованием, мы следим за тем, чтобы все процессы
+      были выполнены в соответствии со стандартами качества и ГОСТа. Фабрика не использует искусственные красители, консерванты,
+      ароматизаторы, поэтому наша продукция всегда свежая и полезная.</p>
+    </div>
+  </section>
+  <section class="choose-home" id="products">
+    <h2 class="choose-home__title section-title">продукция</h2>
+    <ul class="choose-home__list">
+      <li class="choose-home__item">
+        <img src="{%static './images/pechsach.png'%}" alt="Печенье сахарное" class="choose-home__image">
+        <h3 class="choose-home__item-title">печенье сахарное</h3>
+      </li>
+      <li class="choose-home__item">
+        <img src="{%static './images/pechsdob.png'%}" alt="Печенье сахарное" class="choose-home__image">
+        <h3 class="choose-home__item-title">печенье сахарное</h3>
+      </li>
+      <li class="choose-home__item">
+        <img src="{%static './images/krekery.png'%}" alt="Печенье сахарное" class="choose-home__image">
+        <h3 class="choose-home__item-title">крекеры и галеты</h3>
+      </li>
+      <li class="choose-home__item">
+        <img src="{%static './images/pryaniky-syrc.png'%}" alt="Печенье сахарное" class="choose-home__image">
+        <h3 class="choose-home__item-title">пряники сырцовые</h3>
+      </li>
+      <li class="choose-home__item">
+        <img src="{%static './images/pryaniky-pech.png'%}" alt="Печенье сахарное" class="choose-home__image">
+        <h3 class="choose-home__item-title">пряники печатные</h3>
+      </li>
+      <li class="choose-home__item">
+        <img src="{%static './images/sloyki.png'%}" alt="Печенье сахарное" class="choose-home__image">
+        <h3 class="choose-home__item-title">слойки/рогалики</h3>
+      </li>
+      <li class="choose-home__item">
+        <img src="{%static './images/solomka.png'%}" alt="Печенье сахарное" class="choose-home__image">
+        <h3 class="choose-home__item-title">соломка</h3>
+      </li>
+      <li class="choose-home__item">
+        <img src="{%static './images/sushki.png'%}" alt="Печенье сахарное" class="choose-home__image">
+        <h3 class="choose-home__item-title">сухарики/сушки</h3>
+      </li>
+      <li class="choose-home__item">
+        <img src="{%static './images/konfety-vaf.png'%}" alt="Печенье сахарное" class="choose-home__image">
+        <h3 class="choose-home__item-title">конфеты вафельные</h3>
+      </li>
+      <li class="choose-home__item">
+        <img src="{%static './images/batonchiki.png'%}" alt="Печенье сахарное" class="choose-home__image">
+        <h3 class="choose-home__item-title">батончики</h3>
+      </li>
+    </ul>
+    <a href="{%static './catalog/catalog.pdf' %}" download class="btn btn-dark choose-home__button">Скачать полную версию каталога</a>
+  </section>
+  <section class="guarantee">
+    <div class="guarantee__info">
+      <h2 class="section-title guarantee__section-title">гарантия качества</h2>
+      <p class="text guarantee__text">
+        Наши кондитерские и хлебобулочные изделия готовятся с любовью и заботой о качестве.
+        Мы всегда стараемся удовлетворить потребности наших клиентов, предлагая разнообразные вкусы и формы.
+      </p>
+      <a href="/contacts" class="btn btn-light guarantee__button button_type_contact">Связаться с нами</a>
+    </div>
+    <img class="guarantee__image" src="{%static './images/croissants.png'%}" alt="круассаны">
+  </section>
+  <section class="guide">
+    <img class="guide__image" src="{%static './images/kolos.svg'%}" alt="колосок">
+    <p class="text guide__text">«Кубанская кормилица — это не только продукция, это любовь к делу и забота о каждом нашем клиенте.
+      Мы всегда открыты для общения и готовы обсудить любые вопросы и предложения. Благодарим вас за то, что выбираете нас!»</p>
+  </section>
+</main>
+<script type="module" src="{%static './scripts/index.js' %}"></script>
+{% endblock content %}

@@ -1,62 +1,117 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-<head>
-  <link rel="stylesheet" href="{% static 'pages/index.css' %}">
-  <title>{% block title %}Index{% endblock title %}</title>
-</head>
-<div class="contact">
-  <h2 class="contact__title">Напишите нам, если у вас есть вопросы</h2>
-  {% if form.errors %}
-  {% for field in form %} <!-- вывод ошибок для каждого поля, если они есть-->
-    {% for error in field.errors %}
-        {{ error|escape }}
-    {% endfor %}
-  {% endfor %}
-  {% for error in form.non_field_errors %}
-      {{ error|escape }}
-  {% endfor %}
-  {% endif %}
-                 {%if flag %}
-                  Спасибо! ваша заявка сохранена!
-                 {%endif%}
-  <form name="contact_form" method="post" class='form contact__form' novalidate style="margin: 40px auto;">
-    {% csrf_token %}
-    <div class='contact__container'>
-      {{form.first_name}} <!--Имя-->
-      <span class="form__input-error {{form.first_name.name}}-error"></span>
-      {{form.legal_entity}} <!--Юридическое лицо-->
-      <span class="form__input-error {{form.legal_entity.name}}-error"></span>
-      {{form.inn}} <!--ИНН-->
-      <span class="form__input-error {{form.inn.name}}-error"></span>
-      {{form.phone_number}}<!--Номер телефона-->
-      <span class="form__input-error {{form.phone_number.name}}-error"></span>
-      {{form.e_mail}}<!--Электронная почта-->
-      <span class="form__input-error {{form.e_mail.name}}-error"></span>
-      {{form.region}}<!--Регион-->
-      <span class="form__input-error {{form.region.name}}-error"></span>
-      <div class="form__select-wrapper">
-        <label class="form__select-label" for="id_sales_channel">Канал продаж</label>
-        {{form.sales_channel}}<!--Канал продаж-->
-      </div>
-      <div class="form__select-wrapper">
-        <label class="form__select-label" for="id_nalog">Налог</label>
-        {{form.nalog}}<!--Налог-->
-      </div>
-      <div class="form__select-wrapper">
-        <label class="form__select-label" for="id_theme">Тема обращения</label>
-        {{form.theme}}<!--Тема сообщения-->
-      </div>
-      {{form.text}}<!--Сообщение-->
-      <span class="form__input-error {{form.text.name}}-error"></span>
-      <label for="id_rules" class="contact__label">
-        {{ form.rules }}
-        Я принимаю условия пользовательского соглашения
-      </label>
-      <span class="form__input-error {{form.rules.name}}-error"></span>
+{% block title %}Сотрудничество{% endblock title %}
+{% block keywords %}кондитерские изделия, оптом, конфеты, печенье, торты{% endblock keywords %}
+{% block description %}Мы предлагаем вам оставить свои контакты, чтобы наш
+менеджер связался с вами, и вы смогли приобрести кондитерские изделия по оптовым ценам
+на выгодных условиях{% endblock description %}
+<main class="content">
+  <section class="cooperation">
+    <h1 class="section-title cooperation__section-title">cотрудничество</h1>
+    <p class="text cooperation__subtitle">
+      Мы предлагаем качественные кондитерские изделия и долгосрочное взаимовыгодное сотрудничество.
+    </p>
+    <div class="cooperation__container">
+      <p class="text cooperation__description">
+        Мы сотрудничаем со всей Россией, Китаем, Грузией, Абхазией, Казахстаном и предлагаем нашим потенциальным
+        партнёрам — региональным торговым сетям или крупным оптовым компаниям, ознакомиться с ассортиментом продукции.
+      </p>
+      <img class="guarantee__image" src="{% static './images/map.png' %}" alt="круассаны">
     </div>
-      <button class="form__submit" type="submit">Отправить</button>
-  </form>
-</div>
-<script type="module" src="{% static 'scripts/index.js' %}"></script>
+    <div class="cooperation__info">
+      <p class="text cooperation__text">
+        По условиям поставок свяжитесь любым удобным для вас способом или отправьте заявку, наш менеджер свяжется
+        с вами для уточнения деталей и предложит варианты сотрудничества.
+      </p>
+      <a href="#cooperation" class="btn btn-light button_type_contact cooperation__button">Отправить заявку</a>
+    </div>
+  </section>
+  <section class="popup" id="cooperation">
+    <div class="popup__container">
+      <img class="popup__logo" src="{% static './images/logo.svg' %}" alt="">
+      <h2 class="popup__title">Станьте нашими партнёрами</h2>
+      <p class="popup__subtitle">Оставьте свои контактные данные и мы вам перезвоним</p>
+      {% if form.errors %}
+      {% for field in form %} <!-- вывод ошибок для каждого поля, если они есть-->
+        {% for error in field.errors %}
+            {{ error|escape }}
+        {% endfor %}
+      {% endfor %}
+      {% for error in form.non_field_errors %}
+          {{ error|escape }}
+      {% endfor %}
+      {% endif %}
+                    {%if flag %}
+                      Спасибо! ваша заявка сохранена!
+                    {%endif%}
+      <form
+        name="contact_form"
+        method="post"
+        class="form popup__form"
+        name="card-information"
+        novalidate
+      >
+        {% csrf_token %}
+        <div class="">
+          <div>
+            {{form.first_name}} <!--Имя-->
+            <span class="popup__error {{form.first_name.name}}-error"></span>
+          </div>
+          <div>
+            {{form.legal_entity}} <!--Юридическое лицо-->
+            <span class="popup__error {{form.legal_entity.name}}-error"></span>
+          </div>
+          <div>
+            {{form.inn}} <!--ИНН-->
+            <span class="popup__error {{form.inn.name}}-error"></span>
+          </div>
+          <div>
+            {{form.phone_number}}<!--Номер телефона-->
+            <span class="popup__error {{form.phone_number.name}}-error"></span>
+          </div>
+          <div>
+            {{form.e_mail}}<!--Электронная почта-->
+            <span class="popup__error {{form.e_mail.name}}-error"></span>
+          </div>
+          <div>
+            {{form.region}}<!--Регион-->
+            <span class="popup__error {{form.region.name}}-error"></span>
+          </div>
+          <div class="popup__select-wrapper popup__select_type_chanel">
+            <label class="popup__select-label" for="id_sales_channel">Канал продаж</label>
+            {{form.sales_channel}}<!--Канал продаж-->
+          </div>
+          <div class="popup__select-wrapper popup__select-wrapper_type_tax popup__select-wrapper_closed">
+            <label class="popup__select-label" for="id_nalog">Налог</label>
+            {{form.nalog}}<!--Налог-->
+          </div>
+          <div class="popup__select-wrapper">
+            <label class="popup__select-label" for="id_theme">Тема обращения</label>
+            {{form.theme}}<!--Тема сообщения-->
+          </div>
+          <div>
+            {{form.text}}<!--Сообщение-->
+            <span class="popup__error {{form.text.name}}-error"></span>
+          </div>
+          <div class="option-template-container">
+            <label for="id_rules" class="service-form__label">
+              {{ form.rules }}
+              <span class="service-form__image service-form__image_type_option form__pseudo-item form__pseudo-item_type_radio"></span>
+              Я принимаю условия пользовательского соглашения
+            </label>
+            <span class="popup__error {{form.rules.name}}-error"></span>
+          </div>
+        </div>
+          <button
+          class="btn btn-light popup__button"
+          type="submit"
+          title="Сохранить">
+          Отправить
+        </button>
+      </form>
+    </div>
+  </section>
+</main>
+<script type="module" src="{% static 'scripts/cooperation.js' %}"></script>
 {% endblock content %}

@@ -1,0 +1,11 @@
+.interiors__title {
+  text-align: center;
+  padding-bottom: 38px;
+}
+
+@media screen and (max-width: 767px) {
+  .interiors__title {
+    text-align: center;
+    padding-top: 30px;
+  }
+}

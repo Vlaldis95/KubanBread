@@ -1,0 +1,26 @@
+.rent__image {
+  max-width: 768px;
+  max-height: 587px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: -60px -100px;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: -50px;
+}
+
+@media screen and (max-width: 980px) {
+  .rent__image {
+    object-position: 0% 160%;
+    position: relative;
+    right: 0;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .rent__image {
+    object-position: 0% 0%;
+  }
+}

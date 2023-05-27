@@ -1,0 +1,11 @@
+.customer-reviews__quote {
+  text-align: center;
+  width: 55%;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 767px) {
+  .customer-reviews__quote {
+    width: calc(100% - 16px*2);
+  }
+}

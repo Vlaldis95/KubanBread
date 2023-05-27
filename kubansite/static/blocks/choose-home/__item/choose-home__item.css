@@ -1,0 +1,16 @@
+.choose-home__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+  border: 2px solid #D8B067;
+  border-radius: 50px;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 540px) {
+  .choose-home__item {
+    padding: 20px;
+    max-width: 150px;
+  }
+}

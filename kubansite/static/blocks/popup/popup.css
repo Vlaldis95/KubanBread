@@ -1,0 +1,119 @@
+.popup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* position: fixed; */
+  background-color: rgba(0, 0, 0, .5);
+  /* max-width: 100vw;
+  max-height: 100vh; */
+  top: 0;
+  left: 0;
+  /* right: 0;
+  bottom: 0; */
+  /* width: 100%;
+  height: 100%; */
+  z-index: 9999;
+  /* visibility: hidden; */
+  /* opacity: 0; */
+  transition: visibility .3s, opacity .3s linear;
+}
+
+/* .service-form__title_type_option {
+  display: none;
+}
+
+.service-form__title_type_cost {
+  display: none;
+} */
+
+.service-form__label {
+  display: flex;
+  column-gap: 12px;
+  align-items: center;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.2;
+  color: #FFFCF9;
+  position: relative;
+}
+
+.service-form__title_visible {
+  display: block;
+}
+
+.choose-services__input-block {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+.service-form__input {
+  border: 0;
+  width: 100%;
+  height: 10px;
+  box-sizing: border-box;
+  border-bottom: 1px solid #bcbcc4;
+  background-color: transparent;
+  margin-top: 5px;
+  font-size: 14px;
+  font-family: inherit;
+}
+.service-form__input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(0 0 0 0);
+}
+  .service-form__input:checked + .form__pseudo-item_type_radio {
+   position: relative;
+}
+
+.service-form__input + .form__pseudo-item_type_radio::before {
+  content: '';
+  background-image: url('../../images/no-checked.svg');
+  background-repeat: no-repeat;
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 18px;
+  height: 18px;
+}
+
+.service-form__input:checked + .form__pseudo-item_type_radio::before {
+
+  background-image: url('../../images/checked.svg');
+
+}
+
+.service-form__input:disabled + .form__pseudo-item_type_radio {
+  border: 1px grey solid;
+}
+
+.service-form__input:disabled:checked + .form__pseudo-item_type_radio {
+  background-image: url('https://code.s3.yandex.net/web-code/plane_grey.svg');
+}
+
+.service-form__input:focus + .form__pseudo-item_type_radio {
+  box-shadow: 0 0 5px #fff6c5;
+}
+
+.form__pseudo-item {
+  display: inline-block;
+  vertical-align: middle;
+  width: 18px;
+  height: 18px;
+}
+
+.form__pseudo-item_type_radio {
+  background-size: 18px;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}

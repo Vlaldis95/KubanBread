@@ -1,0 +1,11 @@
+.header__link-btn {
+  padding: 0;
+  margin: 41px 0 32px;
+}
+
+@media screen and (max-width: 767px) {
+  .header__link-btn {
+    margin: 0 auto;
+    grid-column: 1 / -1;
+  }
+}

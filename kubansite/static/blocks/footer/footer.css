@@ -1,20 +1,10 @@
 .footer {
-  max-width: 880px;
-  width: 100%;
-  margin: 67px 0 60px;
-  display: flex;
-  justify-content: flex-start;
-}
-
-@media screen and (max-width: 1023px) {
-  .footer {
-    width: calc(100% - 19px*2);
-  }
-}
-
-@media screen and (max-width: 767px) {
-  .footer {
-    margin: 48px 0 36px;
-  }
+ background-image: url('../../images/cockies-footer.jpg');
+ display: grid;
+ flex-wrap: wrap;
+ align-items: center;
+ box-sizing: border-box;
+ min-height: 617px;
+ margin: 140px auto 0;
 }
 

@@ -1,0 +1,52 @@
+{% load static %}
+<header class="header" id="header">
+  <a href="/">
+    <img src="{%static './images/logo.svg'%}" alt="Логотип" class="header__logo_type_mobile">
+  </a>
+  <button class="menu-burger">
+    <span class="menu-burger__item"></span>
+    <span class="menu-burger__item"></span>
+    <span class="menu-burger__item"></span>
+    <span class="menu-burger__item"></span>
+  </button>
+  <div class="header__nav">
+    <div class="header__nav-left">
+      <nav class="header__nav-container">
+        <ul class="header__nav-list">
+          <li class="header__nav-item">
+            <a href="/#products" class="link header__link" title="Дома">Продукция</a>
+          </li>
+          <li class="header__nav-item">
+            <a href="/contacts" class="link header__link" target="_blank" title="Бронирование">Сотрудничество</a>
+          </li>
+          <li class="header__nav-item">
+            <a href="#contacts" class="link header__link" title="Контакты">Контакты</a>
+          </li>
+        </ul>
+      </nav>
+      <a href="/">
+        <img src="{%static './images/logo.svg'%}" alt="Логотип" class="header__logo">
+      </a>
+    </div>
+    <a href="/contacts" type="button" class="btn btn-light header__btn">Связаться с нами</a>
+    <nav class="header__socials-container">
+      <ul class="header__socials">
+        <li class="header__socials-item">
+          <a href="#" class="link header__link" target="_blank" title="Дома">
+            <img src="{%static './images/telegram-icon.svg'%}" class="header__socials-icon" alt="Дома">
+          </a>
+        </li>
+        <li class="header__socials-item">
+          <a href="#" class="link header__link" target="_blank" title="Дома">
+            <img src="{%static './images/whatsapp-icon.svg'%}" class="header__socials-icon" alt="Дома">
+          </a>
+        </li>
+        <li class="header__socials-item">
+          <a href="#" class="link header__link" target="_blank" title="Дома">
+            <img src="{%static './images/viber-icon.svg'%}" class="header__socials-icon" alt="Дома">
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>

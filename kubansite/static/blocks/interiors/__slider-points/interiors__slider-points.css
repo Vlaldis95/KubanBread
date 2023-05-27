@@ -1,0 +1,22 @@
+.interiors__slider-points {
+  position: absolute;
+  bottom: 31px;
+  left: 35%;
+}
+
+@media screen and (max-width: 1023px) {
+  .interiors__slider-points {
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .interiors__slider-points {
+    flex-direction: column;
+    bottom: 5%;
+    left: 95%;
+    transform: translateX(-50%);
+  }
+}

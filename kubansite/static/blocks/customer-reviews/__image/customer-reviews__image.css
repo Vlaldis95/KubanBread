@@ -1,0 +1,8 @@
+.customer-reviews__image {
+  max-width: 120px;
+  max-height: 120px;
+  width: 100%;
+  height: 100%;
+  margin: 0 0 44px;
+  border-radius: 50%;
+}

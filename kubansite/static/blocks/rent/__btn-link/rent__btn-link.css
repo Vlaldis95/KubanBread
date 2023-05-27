@@ -1,0 +1,10 @@
+.rent__btn-link {
+  margin: 0;
+  padding: 0;
+}
+
+@media screen and (max-width: 767px) {
+  .rent__btn-link {
+    align-self: center;
+  }
+}

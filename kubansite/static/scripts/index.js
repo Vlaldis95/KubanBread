@@ -1,46 +1,45 @@
 import FormValidator from './FormValidator.js';
 
-// ====================== константы =====================================================
-const formNewCard = document.forms['contact_form'];
+const menuBurger = document.querySelector('.menu-burger');
+const menuBurgerSpans = menuBurger.querySelectorAll('.menu-burger__item');
+const headerMenu = document.querySelector('.header__nav');
 
-const formValidators = {};
-// ======================================================================================
+const anchors = document.querySelectorAll('a[href*="#"]');
 
-// ====================== функции =======================================================
 
-// функция добавления новой карточки
-// function submitFormNewCard(e) {
-//   e.preventDefault();
-//   formNewCard.reset();
-// }
+function toggleHeaderMenu() {
+  headerMenu.classList.toggle('header__nav_opened');
 
-// ======================================================================================
+  menuBurgerSpans.forEach(function(item) {
+    item.classList.toggle('menu-burger__item_active');
+  });
+}
 
-// ================ циклы ===============================================================
+menuBurger.addEventListener('click', toggleHeaderMenu);
 
-// вывод массива карточек на страницу
+// перемещение к элементам сайта
+anchors.forEach(anchor => {
+  anchor.addEventListener('click', (e) => {
+    e.preventDefault();
+    const anchorHref = anchor.getAttribute('href');
+    const index = anchorHref.lastIndexOf("#");
 
-// запуск валидации всех форм
-Array.from(document.forms).forEach(item => {
-  const formValid = new FormValidator({
-    formSelector: '.form',
-    inputSelector: '.form__input',
-    submitButtonSelector: '.form__submit',
-    inactiveButtonClass: 'form__submit_disabled',
-    inputErrorClass: 'form__input_type_error',
-    errorClass: 'form__input-error_visible'
-    }, item);
-    //добавление данных о валидируемой форме
-    const formName = item.getAttribute('name');
-    formValidators[formName] = formValid;
-    //включение валидации
-    formValid.enableValidation();
- });
+    const blockId = anchorHref.substr(index+1);
+    const elementBlockId = document.getElementById(blockId);
 
-// ======================================================================================
+    headerMenu.classList.remove('header__nav_opened');
+    menuBurgerSpans.forEach(function(item) {
+      item.classList.remove('menu-burger__item_active');
+    });
 
-// ================ слушатели событий ===================================================
+    if(elementBlockId) {
+      elementBlockId.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+        inline: "nearest"});
+    } else {
+      window.location.href = anchorHref;
+    }
 
-// добавление новой карточки
-// formNewCard.addEventListener('submit', submitFormNewCard);
-// ======================================================================================
+  });
+});

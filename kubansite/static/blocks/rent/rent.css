@@ -1,0 +1,19 @@
+.rent {
+  display: flex;
+  overflow-x: hidden;
+  position: relative;
+  min-height: 580px;
+}
+
+@media screen and (max-width: 980px) {
+  .rent {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .rent {
+    flex-direction: column-reverse;
+  }
+}

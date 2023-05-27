@@ -1,0 +1,16 @@
+.guide__section-title {
+  margin: 111px 0 0 0;
+}
+
+@media screen and (max-width: 1279px) {
+  .guide__section-title {
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .guide__section-title {
+    padding: 30px 16px 0;
+    text-align: center;
+  }
+}
