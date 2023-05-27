@@ -64,7 +64,7 @@ anchors.forEach(anchor => {
         block: "start",
         inline: "nearest"});
     } else {
-      window.location.href = anchorHref;
+      window.location.href = anchorHref
     }
 
   });
