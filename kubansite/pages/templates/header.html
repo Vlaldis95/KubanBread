@@ -14,21 +14,21 @@
       <nav class="header__nav-container">
         <ul class="header__nav-list">
           <li class="header__nav-item">
-            <!-- ссылка --> <a href="/#products" class="link header__link" title="Дома">Продукция</a>
+            <!-- ссылка --> <a href="{% url 'index' %}" class="link header__link" title="Дома">Продукция</a>
           </li>
           <li class="header__nav-item">
-            <!-- ссылка --> <a href="/contacts" class="link header__link" target="_blank" title="Бронирование">Сотрудничество</a>
+            <!-- ссылка --> <a href="{% url 'contacts' %}" class="link header__link" target="_blank" title="Бронирование">Сотрудничество</a>
           </li>
           <li class="header__nav-item">
-            <a href="#contacts" class="link header__link" title="Контакты">Контакты</a>
+            <a href="{% url 'contacts' %}" class="link header__link" title="Контакты">Контакты</a>
           </li>
         </ul>
       </nav>
-      <!-- ссылка --> <a href="/">
+      <!-- ссылка --> <a href="{% url 'index' %}">
         <img src="{%static './images/logo.svg'%}" alt="Логотип" class="header__logo">
       </a>
     </div>
-    <!-- ссылка --> <a href="/contacts" type="button" class="btn btn-light header__btn">Связаться с нами</a>
+    <!-- ссылка --> <a href="{% url 'contacts' %}" type="button" class="btn btn-light header__btn">Связаться с нами</a>
     <nav class="header__socials-container">
       <ul class="header__socials">
         <li class="header__socials-item">

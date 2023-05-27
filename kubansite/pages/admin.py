@@ -11,7 +11,7 @@ class ProductAdmin(admin.ModelAdmin):
     list_display = ('title', 'category', 'photo', 'pub_date',
                     'packaging', 'weight', 'expiration_date', 'quantity_a')
     search_fields = ('title',)
-    list_filter = ('pub_date','title')
+    list_filter = ('pub_date', 'title')
 
 
 class CategoryAdmin(admin.ModelAdmin):

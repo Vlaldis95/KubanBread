@@ -44,7 +44,7 @@ def contacts(request):
                 flag = True
                 form = ContactForm()
                 return render(request,
-                              'pages/index.html', {'flag': flag, 'form': form})
+                              'pages/contacts.html', {'flag': flag, 'form': form})
             except BadHeaderError:
                 return HttpResponse('Найден некорректный заголовок')
     form = ContactForm()
