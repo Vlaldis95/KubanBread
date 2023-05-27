@@ -10,13 +10,13 @@
     <nav class="footer__column footer__column_content_houses">
       <ul class="footer__column-links">
         <li>
-          <!-- ссылка --> <a href="/#products" class="footer__column-link link">Продукция</a>
+          <a href="{% url 'index' %}#products" class="footer__column-link link">Продукция</a>
         </li>
         <li>
-          <!-- ссылка --> <a href="{% url 'contacts' %}" class="footer__column-link link" target="_blank">Сотрудничество</a>
+          <a href="{% url 'contacts' %}" class="footer__column-link link" target="_blank">Сотрудничество</a>
         </li>
         <li>
-          <a href="#contacts" class="footer__column-link link">Контакты</a>
+          <a href="{% url 'index' %}#contacts" class="footer__column-link link">Контакты</a>
         </li>
       </ul>
     </nav>

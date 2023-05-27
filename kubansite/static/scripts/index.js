@@ -1,15 +1,13 @@
-import FormValidator from './FormValidator.js';
-
 const menuBurger = document.querySelector('.menu-burger');
 const menuBurgerSpans = menuBurger.querySelectorAll('.menu-burger__item');
 const headerMenu = document.querySelector('.header__nav');
-
+const root = document.querySelector('.root');
 const anchors = document.querySelectorAll('a[href*="#"]');
 
 
 function toggleHeaderMenu() {
   headerMenu.classList.toggle('header__nav_opened');
-
+  root.classList.toggle('root__burger_opened');
   menuBurgerSpans.forEach(function(item) {
     item.classList.toggle('menu-burger__item_active');
   });
@@ -27,10 +25,7 @@ anchors.forEach(anchor => {
     const blockId = anchorHref.substr(index+1);
     const elementBlockId = document.getElementById(blockId);
 
-    headerMenu.classList.remove('header__nav_opened');
-    menuBurgerSpans.forEach(function(item) {
-      item.classList.remove('menu-burger__item_active');
-    });
+    toggleHeaderMenu();
 
     if(elementBlockId) {
       elementBlockId.scrollIntoView({

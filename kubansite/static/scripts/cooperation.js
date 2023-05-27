@@ -4,13 +4,14 @@ const menuBurger = document.querySelector('.menu-burger');
 const menuBurgerSpans = menuBurger.querySelectorAll('.menu-burger__item');
 const headerMenu = document.querySelector('.header__nav');
 const anchors = document.querySelectorAll('a[href*="#"]');
+const root = document.querySelector('.root');
 
 const selectChanel = document.querySelector('.popup__select_type_chanel');
 const selectTax = document.querySelector('.popup__select-wrapper_type_tax');
 
 function toggleHeaderMenu() {
   headerMenu.classList.toggle('header__nav_opened');
-
+  root.classList.toggle('root__burger_opened');
   menuBurgerSpans.forEach(function(item) {
     item.classList.toggle('menu-burger__item_active');
   });
@@ -36,8 +37,6 @@ Array.from(document.forms).forEach(item => {
 
 // добавлени поля выбора налога НДС
 selectChanel.addEventListener('input', (e) => {
-  console.log(e.target.value);
-
   e.target.value === 'Физ.лицо'
   ? selectTax.classList.remove('popup__select-wrapper_closed')
   : selectTax.classList.add('popup__select-wrapper_closed');
@@ -53,10 +52,7 @@ anchors.forEach(anchor => {
     const blockId = anchorHref.substr(index+1);
     const elementBlockId = document.getElementById(blockId);
 
-    headerMenu.classList.remove('header__nav_opened');
-    menuBurgerSpans.forEach(function(item) {
-      item.classList.remove('menu-burger__item_active');
-    });
+    toggleHeaderMenu();
 
     if(elementBlockId) {
       elementBlockId.scrollIntoView({

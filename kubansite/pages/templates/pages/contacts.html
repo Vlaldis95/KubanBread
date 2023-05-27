@@ -1,13 +1,27 @@
 {% extends "base.html" %}
 {% load static %}
-{% block content %}
 {% block title %}Сотрудничество{% endblock title %}
 {% block keywords %}кондитерские изделия, оптом, конфеты, печенье, торты{% endblock keywords %}
 {% block description %}Мы предлагаем вам оставить свои контакты, чтобы наш
 менеджер связался с вами, и вы смогли приобрести кондитерские изделия по оптовым ценам
 на выгодных условиях{% endblock description %}
+{% block content %}
 <main class="content">
   <section class="cooperation">
+    {% if form.errors %}
+      {% for field in form %} <!-- вывод ошибок для каждого поля, если они есть-->
+        {% for error in field.errors %}
+            {{ error|escape }}
+        {% endfor %}
+      {% endfor %}
+      {% for error in form.non_field_errors %}
+          {{ error|escape }}
+      {% endfor %}
+      {% endif %}
+                    {%if flag %}
+                      <p class="text cooperation__confirm">Спасибо! Ваша заявка сохранена!</p>
+                    {%endif%}
+
     <h1 class="section-title cooperation__section-title">cотрудничество</h1>
     <p class="text cooperation__subtitle">
       Мы предлагаем качественные кондитерские изделия и долгосрочное взаимовыгодное сотрудничество.
@@ -32,19 +46,6 @@
       <img class="popup__logo" src="{% static './images/logo.svg' %}" alt="">
       <h2 class="popup__title">Станьте нашими партнёрами</h2>
       <p class="popup__subtitle">Оставьте свои контактные данные и мы вам перезвоним</p>
-      {% if form.errors %}
-      {% for field in form %} <!-- вывод ошибок для каждого поля, если они есть-->
-        {% for error in field.errors %}
-            {{ error|escape }}
-        {% endfor %}
-      {% endfor %}
-      {% for error in form.non_field_errors %}
-          {{ error|escape }}
-      {% endfor %}
-      {% endif %}
-                    {%if flag %}
-                      Спасибо! ваша заявка сохранена!
-                    {%endif%}
       <form
         name="contact_form"
         method="post"
