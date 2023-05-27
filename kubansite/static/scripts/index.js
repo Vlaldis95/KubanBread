@@ -1,13 +1,11 @@
 const menuBurger = document.querySelector('.menu-burger');
 const menuBurgerSpans = menuBurger.querySelectorAll('.menu-burger__item');
 const headerMenu = document.querySelector('.header__nav');
-const root = document.querySelector('.root');
 const anchors = document.querySelectorAll('a[href*="#"]');
 
 
 function toggleHeaderMenu() {
   headerMenu.classList.toggle('header__nav_opened');
-  root.classList.toggle('root__burger_opened');
   menuBurgerSpans.forEach(function(item) {
     item.classList.toggle('menu-burger__item_active');
   });
