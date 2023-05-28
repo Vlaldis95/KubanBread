@@ -31,7 +31,7 @@ def contacts(request):
                        f"Вид налога:{body['nalog']}{ln}"
                        f"Текст сообщения:{body['text']}")
             try:
-                send_mail("Message from site",
+                send_mail("Сообщение с сайта",
                           message,
                           body['e_mail'],
                           RECIPIENTS_EMAIL)
