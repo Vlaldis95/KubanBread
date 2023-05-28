@@ -16,9 +16,9 @@
 @media screen and (max-width: 980px) {
   .header__nav {
     position: absolute;
-    top: 0;
-    right: -100%;
-    transition: right .4s ease-in-out;
+    top: -100%;
+    right: 0;
+    transition: top .4s ease-in-out;
     width: 435px;
     background-color: #0C0500;
     box-shadow: 0px 0px 120px rgba(216, 176, 103, 0.2);
@@ -27,7 +27,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: stretch;
-    margin: 0 auto 0 0;
+    margin: 0;
     padding: 32px 0 72px;
   }
 
