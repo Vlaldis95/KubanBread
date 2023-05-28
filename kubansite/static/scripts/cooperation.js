@@ -54,9 +54,8 @@ anchors.forEach(anchor => {
 
     if(elementBlockId) {
       elementBlockId.scrollIntoView({
-        behavior: "smooth",
         block: "start",
-        inline: "nearest"});
+        inline: "start"});
     } else {
       window.location.href = anchorHref
     }

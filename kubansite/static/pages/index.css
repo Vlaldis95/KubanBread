@@ -152,6 +152,7 @@
 @import url('../blocks/popup/__select-wrapper/_closed/popup__select-wrapper_closed.css');
 @import url('../blocks/popup/__logo/popup__logo.css');
 @import url('../blocks/popup/__subtitle/popup__subtitle.css');
+@import url('../blocks/popup/__reminder/popup__reminder.css');
 
 /* Блок footer*/
 @import url('../blocks/footer/footer.css');

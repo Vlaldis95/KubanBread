@@ -27,7 +27,6 @@ anchors.forEach(anchor => {
 
     if(elementBlockId) {
       elementBlockId.scrollIntoView({
-        behavior: "smooth",
         block: "start",
         inline: "start"});
     } else {
