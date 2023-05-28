@@ -29,7 +29,7 @@ anchors.forEach(anchor => {
       elementBlockId.scrollIntoView({
         behavior: "smooth",
         block: "start",
-        inline: "nearest"});
+        inline: "start"});
     } else {
       window.location.href = anchorHref;
     }
