@@ -21,7 +21,7 @@ class ContactForm(forms.Form):
     region = forms.CharField(
         widget=forms.TextInput(
             attrs={'placeholder': 'Ваш регион (страна, город, район, населенный пункт)',
-                   'class': 'popup__input'}), max_length=100)  # Регион
+                   'class': 'popup__input'}), max_length=100, required=False)  # Регион
     sales_channel = forms.ChoiceField(
         choices=(('Retail', 'Retail'),
                  ('Дистрибуция', 'Дистрибуция'),
@@ -33,7 +33,7 @@ class ContactForm(forms.Form):
     text = forms.CharField(
         widget=forms.Textarea(
             attrs={'placeholder': 'Сообщение',
-                   'class': 'popup__input'}), max_length=200)
+                   'class': 'popup__input'}), max_length=200, required=False)
     rules = forms.BooleanField(
         label='Я принимаю условия пользовательского соглашения',
         widget=forms.CheckboxInput(
