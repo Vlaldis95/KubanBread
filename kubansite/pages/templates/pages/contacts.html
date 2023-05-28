@@ -60,14 +60,6 @@
             <span class="popup__error {{form.first_name.name}}-error"></span>
           </div>
           <div>
-            {{form.legal_entity}} <!--Юридическое лицо-->
-            <span class="popup__error {{form.legal_entity.name}}-error"></span>
-          </div>
-          <div>
-            {{form.inn}} <!--ИНН-->
-            <span class="popup__error {{form.inn.name}}-error"></span>
-          </div>
-          <div>
             {{form.phone_number}}<!--Номер телефона-->
             <span class="popup__error {{form.phone_number.name}}-error"></span>
           </div>
@@ -87,14 +79,11 @@
             <label class="popup__select-label" for="id_nalog">Налог</label>
             {{form.nalog}}<!--Налог-->
           </div>
-          <div class="popup__select-wrapper">
-            <label class="popup__select-label" for="id_theme">Тема обращения</label>
-            {{form.theme}}<!--Тема сообщения-->
-          </div>
           <div>
             {{form.text}}<!--Сообщение-->
             <span class="popup__error {{form.text.name}}-error"></span>
           </div>
+          <p class="text"> *поля обязательны к заполнению </p>
           <div class="option-template-container">
             <label for="id_rules" class="service-form__label">
               {{ form.rules }}
