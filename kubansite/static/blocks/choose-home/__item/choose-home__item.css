@@ -6,11 +6,19 @@
   border: 2px solid #D8B067;
   border-radius: 50px;
   box-sizing: border-box;
+  width: 374px;
+}
+
+@media screen and (max-width: 980px) {
+  .choose-home__item {
+    width: 354px;
+    border-radius: 30px;
+    padding: 10px 20px 20px;
+  }
 }
 
 @media screen and (max-width: 540px) {
   .choose-home__item {
-    padding: 20px;
-    max-width: 150px;
+    width: 150px;
   }
 }

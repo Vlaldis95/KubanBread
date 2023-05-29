@@ -4,8 +4,10 @@
 
 @media screen and (max-width: 980px) {
   .header__btn {
+    grid-area: contact;
     display: block;
     min-width: 280px;
     box-sizing: border-box;
+    margin-top: 74px;
   }
 }

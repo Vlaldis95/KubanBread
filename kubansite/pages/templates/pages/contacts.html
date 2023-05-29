@@ -31,7 +31,7 @@
         Мы сотрудничаем со всей Россией, Китаем, Грузией, Абхазией, Казахстаном и предлагаем нашим потенциальным
         партнёрам — региональным торговым сетям или крупным оптовым компаниям, ознакомиться с ассортиментом продукции.
       </p>
-      <img class="guarantee__image" src="{% static './images/map.png' %}" alt="круассаны">
+      <img class="guarantee__image" src="{% static './images/map.svg' %}" alt="круассаны">
     </div>
     <div class="cooperation__info">
       <p class="text cooperation__text">
@@ -75,14 +75,14 @@
             <label class="popup__select-label" for="id_sales_channel">Канал продаж</label>
             {{form.sales_channel}}<!--Канал продаж-->
           </div>
-          <div class="popup__select-wrapper popup__select-wrapper_type_tax popup__select-wrapper_closed">
+          <div class="popup__select-wrapper popup__select-wrapper_type_tax">
             <label class="popup__select-label" for="id_nalog">Налог</label>
             {{form.nalog}}<!--Налог-->
           </div>
           <div>
             {{form.text}}<!--Сообщение-->
           </div>
-          <p class="text popup__reminder"> *поля обязательны к заполнению </p>
+          <p class="text popup__reminder"> *поля обязательные к заполнению </p>
           <div class="option-template-container">
             <label for="id_rules" class="service-form__label">
               {{ form.rules }}
