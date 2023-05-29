@@ -1,8 +1,10 @@
-from django.shortcuts import render,get_object_or_404
-from pages.forms import ContactForm
 from django.core.mail import BadHeaderError, send_mail
 from django.http import HttpResponse
+from django.shortcuts import get_object_or_404, render
+
 from kubansite.settings import RECIPIENTS_EMAIL
+from pages.forms import ContactForm
+
 from .models import Category, Product
 
 
@@ -55,7 +57,7 @@ def category(request, slug):
 def katalog(request):
     """Страница категорий в каталоге."""
     category = Category.objects.all()
-    context = {'category':category}
+    context = {'category': category}
     return render(request, 'pages/katalog.html',context)
 
 def product(request, product_id):

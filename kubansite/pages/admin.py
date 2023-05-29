@@ -1,8 +1,8 @@
-from django.contrib import admin
-from .models import Category, Product
 import django.contrib.auth.admin
 import django.contrib.auth.models
-from django.contrib import auth
+from django.contrib import admin, auth
+
+from .models import Category, Product
 
 
 class ProductAdmin(admin.ModelAdmin):
