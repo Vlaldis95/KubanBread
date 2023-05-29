@@ -6,6 +6,7 @@ from kubansite.settings import RECIPIENTS_EMAIL
 from pages.forms import ContactForm
 
 from .models import Category, Product
+from .utils import paginate_products
 
 
 def index(request):
@@ -51,13 +52,15 @@ def category(request, slug):
     """Страница категории в каталоге."""
     category = get_object_or_404(Category,slug=slug)
     products = category.products.all()
-    context = {'category': category, 'products': products}
+    page_obj = paginate_products(request, products)
+    context = {'category': category, 'page_obj': page_obj}
     return render(request,'pages/category.html', context)
 
 def katalog(request):
     """Страница категорий в каталоге."""
     category = Category.objects.all()
-    context = {'category': category}
+    page_obj = paginate_products(request, category)
+    context = {'page_obj':page_obj}
     return render(request, 'pages/katalog.html',context)
 
 def product(request, product_id):

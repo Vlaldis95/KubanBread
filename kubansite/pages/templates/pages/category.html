@@ -1,7 +1,7 @@
 {%load static%}
 <p>{{category.title}}</p> <!--название категории-->
 
-{%for i in products%}<!--цикл для вывода товаров категории-->
+{%for i in page_obj%}<!--цикл для вывода товаров категории-->
 {{i.title}}<!--название товара-->
 <img src= {{i.photo.url}} width='170' height='290'/> <!--картинка-->
 {{i.packaging}}<!--вид упаковки-->
@@ -10,3 +10,4 @@
 {{i.quantity_a}}<!--количество вложения-->
 <a href="{% url 'product' i.id %}" >Ссылка на на продукт</a>
 {% endfor %}
+{% include 'paginator.html' %}<!--добавление пагинатора-->
