@@ -12,7 +12,7 @@ class Category(models.Model):
         return self.title
     
     def get_absolute_url(self):
-        return reverse('сфеупщкн', kwargs={'slug': self.slug})
+        return reverse('category', kwargs={'slug': self.slug})
     
     class Meta:
         verbose_name = 'Категория продукции'
@@ -30,7 +30,7 @@ class Product(models.Model):
     photo = models.ImageField(
         verbose_name='Изображение',
         blank=True,
-        upload_to='pages/')
+        upload_to='pages')
     weight = models.CharField(verbose_name='Вес', max_length=10)
     title = models.CharField(verbose_name='Название', max_length=100)
     expiration_date = models.CharField(

@@ -1,8 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render,get_object_or_404
 from pages.forms import ContactForm
 from django.core.mail import BadHeaderError, send_mail
 from django.http import HttpResponse
 from kubansite.settings import RECIPIENTS_EMAIL
+from .models import Category, Product
 
 
 def index(request):
@@ -44,7 +45,21 @@ def contacts(request):
     form = ContactForm()
     return render(request, 'pages/contacts.html', {'form': form})
 
+def category(request, slug):
+    """Страница категории в каталоге."""
+    category = get_object_or_404(Category,slug=slug)
+    products = category.products.all()
+    context = {'category': category, 'products': products}
+    return render(request,'pages/category.html', context)
 
 def katalog(request):
-    """Страница с каталогом."""
-    return render(request, 'pages/katalog.html')
+    """Страница категорий в каталоге."""
+    category = Category.objects.all()
+    context = {'category':category}
+    return render(request, 'pages/katalog.html',context)
+
+def product(request, product_id):
+    """Страница определенного продукта в каталоге."""
+    product = get_object_or_404(Product, id=product_id)
+    context = {'product': product}
+    return render(request,'pages/product.html', context)

@@ -1,0 +1,4 @@
+{% for i in category%} <!-- вывод всех имеющихся категорий -->
+{{i}}
+<a href="{% url 'category' i.slug %}" >Ссылка на категорию</a>
+{% endfor %}
