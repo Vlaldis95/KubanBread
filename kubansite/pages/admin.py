@@ -6,18 +6,22 @@ from .models import Category, Product
 
 
 class ProductAdmin(admin.ModelAdmin):
-    fields = ('title', 'category', 'photo', 'packaging',
+    list_display= ('title', 'category', 'photo', 'packaging',
               'weight', 'expiration_date', 'quantity_a')
-    list_display = ('title', 'category', 'photo', 'pub_date',
+    list_display_links = None
+    list_per_page = 10
+    list_editable = ('title','category', 'photo',
                     'packaging', 'weight', 'expiration_date', 'quantity_a')
     search_fields = ('title',)
     list_filter = ('pub_date', 'title')
 
 
 class CategoryAdmin(admin.ModelAdmin):
-    fields = ('title', 'slug')
+    list_display = ('title', 'slug','photo')
     search_fields = ('title',)
-    list_display = ('id', 'title')
+    list_editable = ('title', 'slug','photo')
+    list_display_links = None
+    list_per_page = 10
     list_filter = ('title',)
 
 

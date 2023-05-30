@@ -60,7 +60,7 @@ def katalog(request):
     """Страница категорий в каталоге."""
     category = Category.objects.all()
     page_obj = paginate_products(request, category)
-    context = {'page_obj':page_obj}
+    context = {'page_obj':page_obj,}
     return render(request, 'pages/katalog.html',context)
 
 def product(request, product_id):

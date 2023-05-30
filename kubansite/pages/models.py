@@ -7,6 +7,10 @@ class Category(models.Model):
     slug = models.SlugField(
         unique=True,
         help_text='Ввести краткое название на латиннице, которое будет добавляться к основному url для адреса категории')
+    photo = models.ImageField(
+        verbose_name='Изображение',
+        blank=True,
+        upload_to='category_images')
     
     def __str__(self):
         return self.title

@@ -10,7 +10,7 @@
     <nav class="breadcrumbs">
       <a href="{% url 'katalog' %}" class="breadcrumbs__link">Каталог</a>
       <span class="breadcrumbs__arrow"></span>
-      <a href="// ссылка на категорию //" class="breadcrumbs__link">{{product.category}}</a> <!--нужно добавить ссылку на категорю в href-->
+      <a href="{%url 'category' product.category.slug %}" class="breadcrumbs__link">{{product.category}}</a> <!--нужно добавить ссылку на категорю в href-->
       <span class="breadcrumbs__arrow_active"></span>
       <a href="" class="breadcrumbs__link breadcrumbs__link_active">{{product.title}}</a>
     </nav>
