@@ -35,7 +35,7 @@ Array.from(document.forms).forEach(item => {
 
 // добавлени поля выбора налога НДС
 selectChanel.addEventListener('input', (e) => {
-  e.target.value === 'Физ.лицо'
+  e.target.value !== 'Физ.лицо'
   ? selectTax.classList.remove('popup__select-wrapper_closed')
   : selectTax.classList.add('popup__select-wrapper_closed');
 });

@@ -13,10 +13,13 @@
           <a href="{% url 'index' %}#products" class="footer__column-link link">Продукция</a>
         </li>
         <li>
-          <a href="{% url 'contacts' %}" class="footer__column-link link" target="_blank">Сотрудничество</a>
+          <a href="{% url 'contacts' %}" class="footer__column-link link">Сотрудничество</a>
         </li>
         <li>
           <a href="{% url 'index' %}#contacts" class="footer__column-link link">Контакты</a>
+        </li>
+        <li>
+          <a href="{% url 'katalog' %}" class="footer__column-link link" title="Каталог продукции">Каталог продукции</a>
         </li>
       </ul>
     </nav>
@@ -52,3 +55,5 @@
     </nav>
   </div>
 </footer>
+<script type="module" src="{%static './scripts/index.js' %}"></script>
+

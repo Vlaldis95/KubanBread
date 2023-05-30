@@ -10,26 +10,23 @@
     <span class="menu-burger__item"></span>
   </button>
   <div class="header__nav">
-    <div class="header__nav-left">
-      <nav class="header__nav-container">
-        <ul class="header__nav-list">
-          <li class="header__nav-item">
-            <!-- ссылка --> <a href="{% url 'index' %}#products" class="link header__link" title="Дома">Продукция</a>
-          </li>
-          <li class="header__nav-item">
-            <!-- ссылка --> <a href="{% url 'contacts' %}" class="link header__link" target="_blank" title="Бронирование">Сотрудничество</a>
-          </li>
-          <li class="header__nav-item">
-            <a href="{% url 'index' %}#contacts" class="link header__link" title="Контакты">Контакты</a>
-          </li>
-        </ul>
-      </nav>
+    <nav class="header__nav-container">
+      <ul class="header__nav-list">
+        <li class="header__nav-item">
+          <a href="{% url 'index' %}#products" class="link header__link" title="Продукция">Продукция</a>
+        </li>
+        <li class="header__nav-item">
+          <a href="{% url 'contacts' %}" class="link header__link" title="Сотрудничество">Сотрудничество</a>
+        </li>
+        <li class="header__nav-item">
+          <a href="{% url 'index' %}#contacts" class="link header__link" title="Контакты">Контакты</a>
+        </li>
+      </ul>
       <a href="{% url 'index' %}">
         <img src="{%static './images/logo.svg'%}" alt="Логотип" class="header__logo">
       </a>
-    </div>
-    <!-- ссылка --> <a href="{% url 'contacts' %}" type="button" class="btn btn-light header__btn">Связаться с нами</a>
-    <nav class="header__socials-container">
+      <a href="{% url 'katalog' %}" class="link header__link" title="Каталог продукции">Каталог продукции</a>
+      <a href="{% url 'contacts' %}" type="button" class="btn btn-light header__btn">Связаться с нами</a>
       <ul class="header__socials">
         <li class="header__socials-item">
           <a href="#" class="link header__link" target="_blank" title="Дома">

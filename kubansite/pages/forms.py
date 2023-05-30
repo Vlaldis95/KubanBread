@@ -37,5 +37,5 @@ class ContactForm(forms.Form):
     rules = forms.BooleanField(
         label='Я принимаю условия пользовательского соглашения',
         widget=forms.CheckboxInput(
-            attrs={'class': 
+            attrs={'class':
                    'popup__input service-form__input option-template-input choose-services__option'}))

@@ -1,32 +1,31 @@
 {% if page_obj.has_other_pages %}<!--если продукция не помещается на одну страницу-->
 <nav aria-label="Page navigation" class="my-5">
-  <ul class="pagination">
+  <ul class="paginator">
     {% if page_obj.has_previous %}<!--если объект пагинатора содержит предыдущую страницу-->
-      <li class="page-item">
-        <a class="page-link" href="?page={{ page_obj.previous_page_number }}"><!--здесь ссылка на пред.страницу-->
-          Предыдущая
+      <li class="paginator__item">
+        <a class="paginator__item-link" href="?page={{ page_obj.previous_page_number }}"><!--здесь ссылка на пред.страницу-->
+          &#8592;
         </a>
       </li>
     {% endif %}<!--если объект пагинатора не содержит предыдущую страницу-->
     {% for i in page_obj.paginator.page_range %}<!--если объект пагинатора не содержит предыдущую страницу-->
         {% if page_obj.number == i %}<!--текущий номер страницы-->
-          <li class="page-item active">
-            <span class="page-link">{{ i }}</span>
+          <li class="paginator__item">
+            <span class="paginator__item-link paginator__item-link_active">{{ i }}</span>
           </li>
         {% else %}<!--другие номера страниц-->
-          <li class="page-item">
-            <a class="page-link" href="?page={{ i }}">{{ i }}</a>
+          <li class="paginator__item">
+            <a class="paginator__item-link" href="?page={{ i }}">{{ i }}</a>
           </li>
         {% endif %}
     {% endfor %}
     {% if page_obj.has_next %}<!--если существует следующая страница-->
-      <li class="page-item">
-        <a class="page-link" href="?page={{ page_obj.next_page_number }}"><!--здесь ссылка на след.страницу-->
-          Следующая
+      <li class="paginator__item">
+        <a class="paginator__item-link" href="?page={{ page_obj.next_page_number }}"><!--здесь ссылка на след.страницу-->
+          &#8594;
         </a>
       </li>
-    {% endif %}    
+    {% endif %}
   </ul>
 </nav>
 {% endif %}
- 

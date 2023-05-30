@@ -1,7 +1,9 @@
 .header__socials {
+  grid-area: socials;
+  align-self: start;
   list-style: none;
+  justify-content: end;
   display: flex;
-  align-items: center;
   gap: 32px;
   padding: 0;
   margin: 0;
@@ -9,6 +11,6 @@
 
 @media screen and (max-width: 980px) {
   .header__socials {
-    margin-top: 43px;
+    margin-top: 31px;
   }
 }
