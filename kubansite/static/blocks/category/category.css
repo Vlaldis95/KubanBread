@@ -26,8 +26,6 @@
 }
 
 .table__item {
-  display: flex;
-  justify-content: center;
   width: 373px;
   background: #201313;
   border: 2px solid #D8B067;
@@ -85,7 +83,7 @@
 
   .table__item {
     width: 150px;
-    padding: 12px;
+    padding: 6px;
     border-radius: 30px;
   }
 
@@ -96,6 +94,7 @@
 
   .table__text {
     font-size: 12px;
+    padding: 0 6px;
   }
 
   .section__title {
@@ -199,6 +198,7 @@
   .product__info {
     flex-direction: column;
     gap: 32px;
+    width: 100%;
   }
 
   .product__text {
@@ -214,7 +214,7 @@
 
 @media screen and (max-width: 540px) {
   .breadcrumbs {
-    width: calc(100% - 10px*2);
+    width: calc(100% - 15px*2);
   }
 }
 
