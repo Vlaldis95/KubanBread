@@ -1,7 +1,31 @@
-
-{{product.title}}<!--название товара-->
-<img src= {{product.photo.url}} width='170' height='290'/> <!--картинка-->
-{{product.packaging}}<!--вид упаковки-->
-{{product.weight}}<!--вес-->
-{{product.expiration_date}}<!--срок годности-->
-{{product.quantity_a}}<!--количество вложения-->
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Каталог{% endblock title %}
+{% block keywords %}кондитерские изделия, оптом, конфеты, печенье, торты{% endblock keywords %}
+{% block description %}На кондитерском производстве Кубанская кормилица вы можете приобрести по оптовым ценам
+такие изделия, как конфеты, печенье, пряники, сушки, слойки и батончики{% endblock description %}
+{% block content %}
+<main class="content">
+  <section class="product">
+    <nav class="breadcrumbs">
+      <a href="{% url 'katalog' %}" class="breadcrumbs__link">Каталог</a>
+      <span class="breadcrumbs__arrow"></span>
+      <a href="// ссылка на категорию //" class="breadcrumbs__link">{{product.category}}</a> <!--нужно добавить ссылку на категорю в href-->
+      <span class="breadcrumbs__arrow_active"></span>
+      <a href="" class="breadcrumbs__link breadcrumbs__link_active">{{product.title}}</a>
+    </nav>
+    <div class="product__container">
+      <img class="product__image" src= {{product.photo.url}}> <!--картинка-->
+      <div class="product__info">
+        <h1 class="product__title">{{product.title}}</h1><!--название товара-->
+        <div class="product__description">
+          <p class="product__text product__weight">{{product.weight}}</p><!--вес-->
+          <p class="product__text product__date">Срок годности - {{product.expiration_date}}</p><!--срок годности-->
+          <p class="product__text product__package">Упаковка - {{product.packaging}}</p><!--вид упаковки-->
+          <p class="product__text product__quantity">Количество вложения - {{product.quantity_a}}</p><!--количество вложения-->
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+{% endblock content %}

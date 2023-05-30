@@ -1,5 +1,24 @@
-{% for i in page_obj%} <!-- вывод всех имеющихся категорий -->
-{{i}}<!--категория-->
-<a href="{% url 'category' i.slug %}" >Ссылка на категорию</a>
-{% endfor %}
-{% include 'paginator.html' %}<!--добавление пагинатора-->
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Каталог{% endblock title %}
+{% block keywords %}кондитерские изделия, оптом, конфеты, печенье, торты{% endblock keywords %}
+{% block description %}На кондитерском производстве Кубанская кормилица вы можете приобрести по оптовым ценам
+такие изделия, как конфеты, печенье, пряники, сушки, слойки и батончики{% endblock description %}
+{% block content %}
+<main class="content">
+  <section class="catalog">
+    <h1 class="section__title">каталог продукции</h1>
+    <ul class="table">
+      {% for i in page_obj%}
+      <li class="table__item">
+        <a href="{% url 'category' i.slug %}">
+          <img class="table__image" alt="" src="//ссылка на изображение//"> <!--нужно добавить фотку в src-->
+          <p class="table__text">{{i}}</p>
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+</main>
+{% include 'paginator.html' %}
+{% endblock content %}

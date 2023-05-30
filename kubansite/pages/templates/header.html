@@ -13,10 +13,10 @@
     <nav class="header__nav-container">
       <ul class="header__nav-list">
         <li class="header__nav-item">
-          <a href="{% url 'index' %}#products" class="link header__link" title="Дома">Продукция</a>
+          <a href="{% url 'index' %}#products" class="link header__link" title="Продукция">Продукция</a>
         </li>
         <li class="header__nav-item">
-          <a href="{% url 'contacts' %}" class="link header__link" target="_blank" title="Бронирование">Сотрудничество</a>
+          <a href="{% url 'contacts' %}" class="link header__link" target="_blank" title="Сотрудничество">Сотрудничество</a>
         </li>
         <li class="header__nav-item">
           <a href="{% url 'index' %}#contacts" class="link header__link" title="Контакты">Контакты</a>
@@ -25,6 +25,7 @@
       <a href="{% url 'index' %}">
         <img src="{%static './images/logo.svg'%}" alt="Логотип" class="header__logo">
       </a>
+      <a href="{% url 'katalog' %}" class="link header__link" target="_blank" title="Каталог продукции">Каталог продукции</a>
       <a href="{% url 'contacts' %}" type="button" class="btn btn-light header__btn">Связаться с нами</a>
       <ul class="header__socials">
         <li class="header__socials-item">

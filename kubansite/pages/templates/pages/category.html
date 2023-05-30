@@ -1,13 +1,33 @@
-{%load static%}
-<p>{{category.title}}</p> <!--название категории-->
-
-{%for i in page_obj%}<!--цикл для вывода товаров категории-->
-{{i.title}}<!--название товара-->
-<img src= {{i.photo.url}} width='170' height='290'/> <!--картинка-->
-{{i.packaging}}<!--вид упаковки-->
-{{i.weight}}<!--вес-->
-{{i.expiration_date}}<!--срок годности-->
-{{i.quantity_a}}<!--количество вложения-->
-<a href="{% url 'product' i.id %}" >Ссылка на на продукт</a>
-{% endfor %}
-{% include 'paginator.html' %}<!--добавление пагинатора-->
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Каталог{% endblock title %}
+{% block keywords %}кондитерские изделия, оптом, конфеты, печенье, торты{% endblock keywords %}
+{% block description %}На кондитерском производстве Кубанская кормилица вы можете приобрести по оптовым ценам
+такие изделия, как конфеты, печенье, пряники, сушки, слойки и батончики{% endblock description %}
+{% block content %}
+<main class="content">
+  <section class="category">
+    <nav class="breadcrumbs">
+      <a href="{% url 'katalog' %}" class="breadcrumbs__link">Каталог</a>
+      <span class="breadcrumbs__arrow_active"></span>
+      <a href="" class="breadcrumbs__link breadcrumbs__link_active">{{category.title}}</a>
+    </nav>
+    <h1 class="section__title">{{category.title}}</h1>
+    <ul class="table">
+      {%for i in page_obj%}
+      <li class="table__item">
+        <a class="table__link" href="{% url 'product' i.id %}">
+          <img class="table__image" src= {{i.photo.url}} alt={{i.title}}>
+          <p class="table__text">{{i.title}}</p>
+        </a>
+        <!-- {{i.packaging}}
+        {{i.weight}}
+        {{i.expiration_date}}
+        {{i.quantity_a}} -->
+      </li>
+      {% endfor %}
+    </ul>
+  {% include 'paginator.html' %}
+  </section>
+</main>
+{% endblock content %}
