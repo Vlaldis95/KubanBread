@@ -15,10 +15,12 @@
     <h1 class="section__title">{{category.title}}</h1>
     <ul class="table">
       {%for i in page_obj%}
-      <li class="table__item">
+      <li>
         <a class="table__link" href="{% url 'product' i.id %}">
-          <img class="table__image" src= {{i.photo.url}} alt={{i.title}}>
-          <p class="table__text">{{i.title}}</p>
+          <div class="table__item">
+              <img class="table__image" src= {{i.photo.url}} alt={{i.title}}>
+              <p class="table__text">{{i.title}}</p>
+          </div>
         </a>
         <!-- {{i.packaging}}
         {{i.weight}}
