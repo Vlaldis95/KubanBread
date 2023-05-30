@@ -48,13 +48,13 @@
   line-height: 1.035;
   text-align: center;
   color: #FFFCF9;
-  margin: 24px 0 0;
+  margin: 12px 0 6px;
 }
 
 .table__image {
   width: 272px;
   height: 164px;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
 }
 

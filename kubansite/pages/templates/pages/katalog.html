@@ -11,8 +11,8 @@
     <ul class="table">
       {% for i in page_obj%}
       <li class="table__item">
-        <a href="{% url 'category' i.slug %}">
-          <img class="table__image" alt="" src="{{i.photo.url}}"> <!--нужно добавить фотку в src-->
+        <a class="table__link" href="{% url 'category' i.slug %}">
+          <img class="table__image" alt="" src="{{i.photo.url}}">
           <p class="table__text">{{i}}</p>
         </a>
       </li>
