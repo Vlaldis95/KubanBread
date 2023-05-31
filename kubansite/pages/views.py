@@ -68,3 +68,12 @@ def product(request, product_id):
     product = get_object_or_404(Product, id=product_id)
     context = {'product': product}
     return render(request,'pages/product.html', context)
+
+def page_not_found(request, exception):
+    "Страница не найдена"
+    return render(request, 'pages/404.html', {'path': request.path}, status=404)
+
+def server_not_working(request):
+    "Страница не найдена"
+    return render(request, 'pages/500.html', {'path': request.path}, status=500)
+ 
