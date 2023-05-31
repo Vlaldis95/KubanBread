@@ -7,7 +7,7 @@
 
 @media screen and (max-width: 980px) {
   .header__link {
-    font-size: 24px;
+    font-size: 16px;
     display: flex;
     align-items: center;
   }

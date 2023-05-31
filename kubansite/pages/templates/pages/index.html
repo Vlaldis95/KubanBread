@@ -5,6 +5,9 @@
 {% block description %}На кондитерском производстве Кубанская кормилица вы можете приобрести по оптовым ценам
 такие изделия, как конфеты, печенье, пряники, сушки, слойки и батончики{% endblock description %}
 {% block content %}
+<link
+    rel="stylesheet"
+    href="{% static 'pages/animate.css' %}">
 <main class="content">
   <section class="rent">
     <div class="rent__info">
@@ -17,7 +20,7 @@
     <img src="{%static './images/welcome.png'%}" alt="" class="rent__image">
   </section>
   <section class="guide">
-    <img class="guide__image" src="{%static './images/kolos.svg'%}" alt="колосок">
+    <img class="guide__image wow bounceInDown" src="{%static './images/kolos.svg'%}" alt="колосок">
     <p class="text guide__text">«Кубанская кормилица — кондитерское производство, которое знают и любят более 20 лет.
       Мы заботимся о качестве нашей продукции, используем только самые свежие и качественные ингредиенты, делаем все,
       чтобы удовлетворить вкусовые потребности наших клиентов».</p>
@@ -88,9 +91,14 @@
     <img class="guarantee__image" src="{%static './images/croissants.png'%}" alt="круассаны">
   </section>
   <section class="guide">
-    <img class="guide__image" src="{%static './images/kolos.svg'%}" alt="колосок">
+    <img class="guide__image wow bounceInDown" src="{%static './images/kolos.svg'%}" alt="колосок">
     <p class="text guide__text">«Кубанская кормилица — это не только продукция, это любовь к делу и забота о каждом нашем клиенте.
       Мы всегда открыты для общения и готовы обсудить любые вопросы и предложения. Благодарим вас за то, что выбираете нас!»</p>
   </section>
 </main>
+<script type="module" src="{%static './scripts/index.js' %}"></script>
+<script src="{%static './scripts/wow.min.js' %}"></script>
+<script>
+  new WOW().init();
+</script>
 {% endblock content %}
