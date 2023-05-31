@@ -313,3 +313,52 @@
     font-size: 20px;
   }
 }
+
+.not-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1180px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.not-found__title {
+  font-family: 'Forum', serif;
+  color: #FFFCF9;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 220px;
+  line-height: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 90px 0 0;
+  padding: 0;
+}
+
+.not-found__text {
+  font-family: 'Forum';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 60px;
+  line-height: 120%;
+  text-align: center;
+  text-transform: uppercase;
+  color: #FFFCF9;
+  margin: 0 0 40px;
+  padding: 0;
+}
+
+.not-found__btn {
+}
+
+@media screen and (max-width: 600px) {
+  .not-found__title {
+    font-size: 120px;
+    margin: 40px 0 0;
+  }
+
+  .not-found__text {
+    font-size: 40px;
+  }
+}
