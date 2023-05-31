@@ -11,5 +11,6 @@
   .footer__column-links {
     align-items: center;
     text-align: center;
+    row-gap: 12px;
   }
 }

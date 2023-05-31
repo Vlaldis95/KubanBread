@@ -15,7 +15,7 @@
     <h1 class="section__title">{{category.title}}</h1>
     <ul class="table">
       {%for i in page_obj%}
-      <li>
+      <li class="table__item-container">
         <a class="table__link" href="{% url 'product' i.id %}">
           <div class="table__item">
               <img class="table__image" src= {{i.photo.url}} alt={{i.title}}>
@@ -32,4 +32,5 @@
   {% include 'paginator.html' %}
   </section>
 </main>
+<script type="module" src="{%static './scripts/index.js' %}"></script>
 {% endblock content %}

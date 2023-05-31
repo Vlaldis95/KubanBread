@@ -10,3 +10,9 @@
   }
 }
 
+@media screen and (max-width: 780px) {
+  .footer__column_content_contacts {
+    margin-top: 40px;
+  }
+}
+

@@ -10,15 +10,18 @@
     <h1 class="section__title">каталог продукции</h1>
     <ul class="table">
       {% for i in page_obj%}
-      <li class="table__item">
+      <li class="table__item-container">
         <a class="table__link" href="{% url 'category' i.slug %}">
-          <img class="table__image" alt="" src="{{i.photo.url}}">
-          <p class="table__text">{{i}}</p>
+          <div class="table__item">
+            <img class="table__image" alt="" src="{{i.photo.url}}">
+            <p class="table__text">{{i}}</p>
+          </div>
         </a>
       </li>
       {% endfor %}
     </ul>
   </section>
 </main>
+<script type="module" src="{%static './scripts/index.js' %}"></script>
 {% include 'paginator.html' %}
 {% endblock content %}
