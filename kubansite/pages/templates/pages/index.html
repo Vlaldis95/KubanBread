@@ -86,18 +86,18 @@
         Наши кондитерские и хлебобулочные изделия готовятся с любовью и заботой о качестве.
         Мы всегда стараемся удовлетворить потребности наших клиентов, предлагая разнообразные вкусы и формы.
       </p>
-      <!-- ссылка --> <a href="/contacts" class="btn btn-light guarantee__button button_type_contact">Связаться с нами</a>
+      <!-- ссылка --> <a href="{% url 'contacts' %}" class="btn btn-light guarantee__button button_type_contact">Связаться с нами</a>
     </div>
-    <img class="guarantee__image" src="{%static './images/croissants.png'%}" alt="круассаны">
+    <img class="guarantee__image" src="{% static './images/croissants.png'%}" alt="круассаны">
   </section>
   <section class="guide">
-    <img class="guide__image wow bounceInDown" src="{%static './images/kolos.svg'%}" alt="колосок">
+    <img class="guide__image wow bounceInDown" src="{% static './images/kolos.svg'%}" alt="колосок">
     <p class="text guide__text">«Кубанская кормилица — это не только продукция, это любовь к делу и забота о каждом нашем клиенте.
       Мы всегда открыты для общения и готовы обсудить любые вопросы и предложения. Благодарим вас за то, что выбираете нас!»</p>
   </section>
 </main>
-<script type="module" src="{%static './scripts/index.js' %}"></script>
-<script src="{%static './scripts/wow.min.js' %}"></script>
+<script type="module" src="{% static './scripts/index.js' %}"></script>
+<script src="{% static './scripts/wow.min.js' %}"></script>
 <script>
   new WOW().init();
 </script>

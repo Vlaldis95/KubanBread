@@ -1,0 +1,13 @@
+.interiors__item_active {
+  grid-row: 1 / span 3;
+  grid-column: 1 / -2;
+  pointer-events: none;
+  max-height: 586px;
+}
+
+@media screen and (max-width: 1023px) {
+  .interiors__item_active {
+    grid-column: 1 / -1;
+    grid-row: 2 / span 2;
+  }
+}

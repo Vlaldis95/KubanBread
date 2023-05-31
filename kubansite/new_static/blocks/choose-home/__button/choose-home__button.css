@@ -1,0 +1,11 @@
+.choose-home__button {
+  display: inline-block;
+  justify-content: center;
+  margin: 80px auto 0;
+}
+
+@media screen and (max-width: 480px) {
+  .choose-home__button {
+    margin: 40px auto 0;
+  }
+}

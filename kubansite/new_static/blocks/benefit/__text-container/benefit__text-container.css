@@ -1,0 +1,28 @@
+.benefit__text-container {
+  padding: 40px 48px;
+  background-color: #D8B067;
+  box-shadow: 0px 0px 18px rgba(54, 38, 38, 0.1);
+  border-radius: 50px;
+  max-width: 1180px;
+  width: calc(100% - 130px*2);
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 1023px) {
+  .benefit__text-container {
+    width: calc(100% - 50px*2);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .benefit__text-container {
+    width: calc(100% - 20px*2);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .benefit__text-container {
+    padding: 40px 26px;
+  }
+}

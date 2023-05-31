@@ -1,0 +1,17 @@
+.popup__subtitle {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.2;
+  text-align: center;
+  color: #FFFCF9;
+  padding: 12px 0 0;
+  margin: 0;
+}
+
+@media screen and (max-width: 600px) {
+  .popup__subtitle {
+    /* font-size: 18px;
+    margin: 0 0 62px; */
+  }
+}

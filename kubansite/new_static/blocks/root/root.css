@@ -1,0 +1,9 @@
+.root {
+  font-family: Alice, serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  background-color: #0C0500;
+  overflow-x: hidden;
+  position: relative;
+}

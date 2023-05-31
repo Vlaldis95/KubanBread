@@ -1,7 +1,6 @@
 from django.core.mail import BadHeaderError, send_mail
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, render
-
 from kubansite.settings import RECIPIENTS_EMAIL
 from pages.forms import ContactForm
 
@@ -27,13 +26,13 @@ def contacts(request):
                     'nalog': form.cleaned_data['nalog'],
                     'text': form.cleaned_data['text']}
             ln = '\n'
-            message = (f"Имя:{body['first_name']}{ln}"
-                       f"Номер телефона:{body['phone_number']}{ln}"
-                       f"e-mail:{body['e_mail']}{ln}"
-                       f"Регион:{body['region']}{ln}"
-                       f"Канал продаж:{body['sales_channel']}{ln}"
-                       f"Вид налога:{body['nalog']}{ln}"
-                       f"Текст сообщения:{body['text']}")
+            message = (f"Имя: {body['first_name']}{ln}"
+                       f"Номер телефона: {body['phone_number']}{ln}"
+                       f"e-mail: {body['e_mail']}{ln}"
+                       f"Регион: {body['region']}{ln}"
+                       f"Канал продаж: {body['sales_channel']}{ln}"
+                       f"Вид налога: {body['nalog']}{ln}"
+                       f"Текст сообщения: {body['text']}")
             try:
                 send_mail("Сообщение с сайта",
                           message,
@@ -69,11 +68,10 @@ def product(request, product_id):
     context = {'product': product}
     return render(request,'pages/product.html', context)
 
+
 def page_not_found(request, exception):
-    "Страница не найдена"
     return render(request, 'pages/404.html', {'path': request.path}, status=404)
 
-def server_not_working(request):
-    "Страница не найдена"
-    return render(request, 'pages/500.html', {'path': request.path}, status=500)
+def e_handler500(request):
+    return render(request, 'pages/500.html', status=500)
  

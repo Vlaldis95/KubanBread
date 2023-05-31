@@ -1,0 +1,18 @@
+.cooperation {
+  display: grid;
+  margin: 80px auto 0;
+  width: calc(100% - 130px*2);
+}
+
+@media screen and (max-width: 1023px) {
+  .cooperation {
+    width: calc(100% - 60px*2);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .cooperation {
+    margin: 40px auto 0;
+    width: calc(100% - 20px*2);
+  }
+}

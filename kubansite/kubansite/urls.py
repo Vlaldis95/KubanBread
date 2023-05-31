@@ -4,8 +4,7 @@ from django.contrib import admin
 from django.urls import path
 
 from pages.views import category, contacts, index, katalog, product
-handler404 = 'pages.views.page_not_found'
-handler500 = 'pages.views.server_not_working'
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -15,7 +14,8 @@ urlpatterns = [
     path('category/<slug:slug>/', category, name='category'),
     path('product/<int:product_id>/', product, name='product')
 ]
-
+handler404 = 'pages.views.page_not_found'
+handler500 = 'pages.views.e_handler500'
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL,
                           document_root=settings.MEDIA_ROOT)

@@ -1,0 +1,32 @@
+.choose-home__link {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #424F7B;
+  display: flex;
+  align-self: baseline;
+  margin: 32px 0 0;
+  column-gap: 10px;
+  transition: column-gap .4s ease-in-out;
+}
+
+.choose-home__link:hover {
+  column-gap: 14px;
+}
+
+@media screen and (max-width: 600px) {
+  .choose-home__link {
+    color: #fff;
+    position: relative;
+    z-index: 1;
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 384px) {
+  .choose-home__link {
+    font-size: 16px;
+  }
+}
+

@@ -1,0 +1,10 @@
+.choose-home__text {
+  margin: 0 0 32px;
+}
+
+@media screen and (max-width: 384px) {
+  .choose-home__text {
+    margin-left: 16px;
+    font-size: 16px;
+  }
+}

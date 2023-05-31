@@ -1,0 +1,7 @@
+.popup__select-wrapper_type_tax {
+  position: relative;
+  top: 0px;
+  transition: top .2s ease-out;
+}
+
+

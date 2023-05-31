@@ -1,0 +1,12 @@
+.rent__text {
+  margin: 24px 0 59px 0;
+  padding: 0;
+}
+
+@media screen and (max-width: 767px) {
+  .rent__text {
+    padding: 0 16px;
+    margin: 10px 0 20px;
+    text-align: center;
+  }
+}

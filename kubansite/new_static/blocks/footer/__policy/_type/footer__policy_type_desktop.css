@@ -1,0 +1,9 @@
+.footer__policy_type_desktop {
+  margin: 111px 0 0;
+}
+
+@media screen and (max-width: 1023px) {
+  .footer__policy_type_desktop {
+    display: none;
+  }
+}

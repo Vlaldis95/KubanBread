@@ -1,0 +1,14 @@
+.interiors__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: minmax(320px, 1090px) repeat(auto-fit, minmax(20%, 1fr));
+  gap: 3px;
+}
+
+@media screen and (max-width: 1023px) {
+  .interiors__list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
