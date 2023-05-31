@@ -33,9 +33,9 @@ class ContactForm(forms.Form):
     text = forms.CharField(
         widget=forms.Textarea(
             attrs={'placeholder': 'Сообщение',
-                   'class': 'popup__input form__input'}), max_length=200, required=False)
+                   'class': 'popup__input popup__input_type_text form__input'}), max_length=200, required=False)
     rules = forms.BooleanField(
         label='Я принимаю условия пользовательского соглашения',
         widget=forms.CheckboxInput(
             attrs={'class':
-                   'popup__input service-form__input option-template-input choose-services__option'}))
+                   'popup__input form__input form__input_el_extra_options'}))

@@ -1,7 +1,12 @@
 {% extends "base.html" %}
 {% block title %}Ошибка 404{% endblock %}
 {% block content %}
-  <h1>Custom 404</h1>
-  <p>Страницы с адресом {{ path }} не существует</p>
-  <a href="{% url 'index' %}"></a><!--ссылка на главную страницу-->
-{% endblock %} 
+<main class="content">
+  <section class="not-found">
+    <h1 class="not-found__title">404</h1>
+    <p class="not-found__text">страница не найдена</p>
+    <a class="btn btn-light not-found__btn" href="{% url 'index' %}">Вернуться на главную</a><!--ссылка на главную страницу-->
+  </section>
+</main>
+<script type="module" src="{%static './scripts/index.js' %}"></script>
+{% endblock %}
