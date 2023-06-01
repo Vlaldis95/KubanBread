@@ -1,5 +1,25 @@
+{% extends "base.html" %}
 {% load static %}
-{% for i in packaging %}
-{{i.name}} <!--название упаковки-->
-<img src="{{i.photo.url}}"> <!--фото упаковки-->
-{% endfor %}
+{% block title %}Упаковка{% endblock title %}
+{% block keywords %}кондитерские изделия, оптом, конфеты, печенье, торты, упаковка{% endblock keywords %}
+{% block description %}На кондитерском производстве Кубанская кормилица вы можете приобрести по оптовым ценам
+такие изделия, как конфеты, печенье, пряники, сушки, слойки и батончики{% endblock description %}
+{% block content %}
+<main class="content">
+  <section class="packaging">
+    <h1 class="section-title packaging__title">Упаковка</h1>
+    <ul class="packaging__list">
+      {% for i in packaging %}
+      <li class="packaging__item">
+        <img class="packaging__image" src="{{i.photo.url}}" alt="{{i.name}}">
+        <div class="packaging__description">
+          <p class="packaging__text">{{i.name}}</p>
+          <p class="packaging__text"> {{i.description}} </p>
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+</main>
+<script type="module" src="{%static './scripts/index.js' %}"></script>
+{% endblock content %}

@@ -1,20 +1,24 @@
 from django.db import models
 from django.urls import reverse
 
+
 class Packaging(models.Model):
-    name = models.CharField(max_length=50,verbose_name='Название упаковки')
+    name = models.CharField(max_length=50, verbose_name='Название упаковки')
     photo = models.ImageField(
         verbose_name='Изображение',
         blank=True,
         upload_to='packages')
-    
+    description = models.TextField(
+        verbose_name='Описание', max_length=200, blank=True)
+
     def __str__(self):
         return self.name
-    
+
     class Meta:
         verbose_name = 'Упаковка'
         verbose_name_plural = 'Виды упаковки'
-    
+
+
 class Category(models.Model):
     title = models.CharField(max_length=100, verbose_name='Название категории')
     slug = models.SlugField(
@@ -24,20 +28,21 @@ class Category(models.Model):
         verbose_name='Изображение',
         blank=True,
         upload_to='category_images')
-    
+
     def __str__(self):
         return self.title
-    
+
     def get_absolute_url(self):
         return reverse('category', kwargs={'slug': self.slug})
-    
+
     class Meta:
         verbose_name = 'Категория продукции'
         verbose_name_plural = 'Категории продукции'
 
 
 class Product(models.Model):
-    packages = models.ManyToManyField(Packaging, related_name="products_packages",verbose_name='упаковка',
+    packages = models.ManyToManyField(
+        Packaging, related_name="products_packages", verbose_name='упаковка',
         max_length=10)
     pub_date = models.DateTimeField('Дата загрузки', auto_now=True)
     photo = models.ImageField(

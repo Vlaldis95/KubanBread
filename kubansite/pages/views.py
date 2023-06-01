@@ -1,6 +1,7 @@
 from django.core.mail import BadHeaderError, send_mail
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, render
+
 from kubansite.settings import RECIPIENTS_EMAIL
 from pages.forms import ContactForm
 
