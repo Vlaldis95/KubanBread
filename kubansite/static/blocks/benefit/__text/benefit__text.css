@@ -4,7 +4,7 @@
   font-size: 20px;
   line-height: 1.2;
   text-align: center;
-  color: #201313;
+  color: var(--color-dark);
   margin: 0;
 }
 

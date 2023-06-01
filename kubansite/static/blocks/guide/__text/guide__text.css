@@ -4,7 +4,7 @@
   font-weight: 400;
   font-size: 36px;
   line-height: 1.1;
-  color: #FFFCF9;
+  color: var(--color-light);
   margin: 0 auto;
   padding: 40px 0 0;
 }

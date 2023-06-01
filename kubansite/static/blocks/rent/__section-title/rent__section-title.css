@@ -5,9 +5,9 @@
   margin: 0;
   padding: 116px 0 40px;
   text-transform: uppercase;
-  font-family: Forum, serif;
+  font-family: var(--title-font);
   max-width: 638px;
-  color: #D8B067;
+  color: var(--color-gold);
 }
 
 @media screen and (max-width: 980px) {

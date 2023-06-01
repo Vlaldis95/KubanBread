@@ -1,7 +1,7 @@
 .guarantee__text {
   max-width: 900px;
   text-align: center;
-  color: #FFFCF9;
+  color: var(--color-light);
   padding: 0;
   font-size: 20px;
 }
