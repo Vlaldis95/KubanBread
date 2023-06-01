@@ -2,7 +2,7 @@
   border-radius: 50px;
   min-width: 280px;
   padding: 12px 24px;
-  color: #201313;
+  color: var(--color-dark);
   font-weight: 400;
   font-size: 18px;
   line-height: 1.2;

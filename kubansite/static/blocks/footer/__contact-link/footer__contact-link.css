@@ -3,7 +3,7 @@
   font-weight: 400;
   font-size: 36px;
   line-height: 1.1;
-  color: #FFFCF9;
+  color: var(--color-light);
   padding: 4px 0 0;
 }
 

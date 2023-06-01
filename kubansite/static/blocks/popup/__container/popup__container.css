@@ -6,8 +6,8 @@
   align-items: center;
   box-sizing: border-box;
   position: relative;
-  background: #201313;
-  border: 2px solid #D8B067;
+  background: var(--color-dark);
+  border: 2px solid var(--color-gold);
   border-radius: 50px;
 }
 

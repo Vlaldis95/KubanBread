@@ -1,13 +1,7 @@
 .benefit__title {
-  font-family: Forum, serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 48px;
-  line-height: 1.2;
-  text-align: center;
-  text-transform: uppercase;
-  color: #201313;
+  color: var(--color-dark);
   margin: 0 0 24px;
+  text-align: center;
 }
 
 @media screen and (max-width: 767px) {

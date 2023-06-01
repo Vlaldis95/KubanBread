@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: center;
   padding: 40px;
-  border: 2px solid #D8B067;
+  border: 2px solid var(--color-gold);
   border-radius: 50px;
   box-sizing: border-box;
   width: 374px;
