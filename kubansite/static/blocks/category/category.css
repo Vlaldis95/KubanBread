@@ -1,12 +1,12 @@
-.section__title {
-  font-family: 'Forum', serif;
+.category__title {
+  font-family: var(--title-font);
   margin: 60px 0 40px;
   font-weight: 400;
   font-size: 60px;
   line-height: 120%;
   text-align: center;
   text-transform: uppercase;
-  color: #FFFCF9;
+  color: var(--color-light);
 }
 
 .table {
@@ -21,11 +21,14 @@
 }
 
 .table__item {
-  width: 373px;
-  background-color: #201313;
-  border: 2px solid #D8B067;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 273px;
+  background-color: var(--color-dark);
+  border: 2px solid var(--color-gold);
   border-radius: 50px;
-  padding: 32px 51px;
+  padding: 32px 38px 24px;
   box-sizing: border-box;
   transition: all .4s ease-in-out;
   flex-grow: 1;
@@ -58,13 +61,13 @@
   font-size: 20px;
   line-height: 1.035;
   text-align: center;
-  color: #FFFCF9;
+  color: var(--color-light);
   margin: 12px 0 6px;
 }
 
 .table__image {
-  width: 272px;
-  height: 164px;
+  width: 197px;
+  height: 123px;
   object-fit: contain;
   object-position: center;
 }
@@ -80,13 +83,12 @@
   }
 
   .table__item {
-    width: 229px;
+    width: 230px;
     padding: 24px;
   }
 
   .table__image {
-    width: 193px;
-    height: 123px;
+
   }
 
   .table__text {
@@ -96,18 +98,18 @@
 
 @media screen and (max-width: 480px) {
   .table {
-    gap: 10px;
+    gap: 20px;
   }
 
   .table__item {
     width: 150px;
-    padding: 6px;
+    padding: 19px 6px;
     border-radius: 30px;
   }
 
   .table__image {
-    width: 138px;
-    height: 86px;
+    width: 91px;
+    height: 75px;
   }
 
   .table__text {
@@ -115,13 +117,13 @@
     padding: 0 6px;
   }
 
-  .section__title {
+  .categoty__title {
     font-size: 40px;
   }
 }
 
 .product {
-  max-width: 1180px;
+  max-width: var(--width-max);
   width: calc(100% - 2*20px);
   margin: 0 auto;
 }
@@ -138,8 +140,8 @@
   object-fit: contain;
   object-position: center;
   padding: 40px 32px;
-  background: #201313;
-  border: 2px solid #D8B067;
+  background: var(--color-dark);
+  border: 2px solid var(--color-gold);
   border-radius: 50px;
   box-sizing: border-box;
 }
@@ -148,7 +150,7 @@
   font-weight: 400;
   font-size: 20px;
   line-height: 120%;
-  color: #FFFCF9;
+  color: var(--color-light);
   margin: 0 0 40px;
   min-width: 280px;
 }
@@ -158,7 +160,7 @@
   font-weight: 400;
   font-size: 20px;
   line-height: 120%;
-  color: #FFFCF9;
+  color: var(--color-light);
 }
 
 .product__description {
@@ -169,7 +171,7 @@
 
 .product__weight {
   padding: 8px;
-  border: 2px solid #D8B067;
+  border: 2px solid var(--color-gold);
   border-radius: 10px;
   align-self: flex-start;
 }
@@ -216,7 +218,7 @@
 }
 
 .breadcrumbs {
-  max-width: 1180px;
+  max-width: var(--width-max);
   margin: 80px auto 0;
 }
 
@@ -244,7 +246,7 @@
 
 .breadcrumbs__link_active {
   text-decoration: underline;
-  color: #FFFCF9;
+  color: var(--color-light);
   cursor: default;
   pointer-events: none;
 }
@@ -274,7 +276,7 @@
 }
 
 .paginator {
-  max-width: 1180px;
+  max-width: var(--width-max);
   width: 100%;
   display: flex;
   gap: 28px;
@@ -289,7 +291,7 @@
   font-weight: 400;
   font-size: 36px;
   line-height: 110%;
-  color: #FFFCF9;
+  color: var(--color-light);
   position: relative;
   z-index: 10;
 }
@@ -318,14 +320,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 1180px;
+  max-width: var(--width-max);
   width: 100%;
   margin: 0 auto;
 }
 
 .not-found__title {
   font-family: 'Forum', serif;
-  color: #FFFCF9;
+  color: var(--color-light);
   font-style: normal;
   font-weight: 400;
   font-size: 220px;
@@ -344,12 +346,9 @@
   line-height: 120%;
   text-align: center;
   text-transform: uppercase;
-  color: #FFFCF9;
+  color: var(--color-light);
   margin: 0 0 40px;
   padding: 0;
-}
-
-.not-found__btn {
 }
 
 @media screen and (max-width: 600px) {

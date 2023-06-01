@@ -1,6 +1,6 @@
 .btn-light {
-  background-color: #D8B067;
-  border: 2px solid #D8B067;
+  background-color: var(--color-gold);
+  border: 2px solid var(--color-gold);
 }
 
 .btn-light:hover {

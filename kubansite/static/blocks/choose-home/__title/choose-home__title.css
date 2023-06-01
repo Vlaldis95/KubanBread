@@ -1,13 +1,7 @@
 .choose-home__title {
   text-align: center;
   margin: 0 0 84px;
-  font-family: Forum, serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 48px;
-  line-height: 1.2;
-  text-transform: uppercase;
-  color: #FFFCF9;
+  color: var(--color-light);
 }
 
 @media screen and (max-width: 480px) {
