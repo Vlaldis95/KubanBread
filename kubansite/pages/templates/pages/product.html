@@ -21,7 +21,10 @@
         <div class="product__description">
           <p class="product__text product__weight">{{product.weight}}</p><!--вес-->
           <p class="product__text product__date">Срок годности - {{product.expiration_date}}</p><!--срок годности-->
-          <p class="product__text product__package">Упаковка - {{product.packaging}}</p><!--вид упаковки-->
+          {%for i in packaging%}
+          <p class="product__text product__package">Упаковка - {{i.name}}</p><!--вид упаковки-->
+          {% endfor %} 
+          <!--{%url 'packaging' product.id %} ссылка на страницу с упаковкой-->
           <p class="product__text product__quantity">Количество вложения - {{product.quantity_a}}</p><!--количество вложения-->
         </div>
       </div>

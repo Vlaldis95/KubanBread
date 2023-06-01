@@ -1,0 +1,5 @@
+{% load static %}
+{% for i in packaging %}
+{{i.name}} <!--название упаковки-->
+<img src="{{i.photo.url}}"> <!--фото упаковки-->
+{% endfor %}

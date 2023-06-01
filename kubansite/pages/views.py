@@ -65,7 +65,8 @@ def katalog(request):
 def product(request, product_id):
     """Страница определенного продукта в каталоге."""
     product = get_object_or_404(Product, id=product_id)
-    context = {'product': product}
+    packaging = product.packages.all()
+    context = {'product': product, 'packaging':packaging}
     return render(request,'pages/product.html', context)
 
 
@@ -74,4 +75,10 @@ def page_not_found(request, exception):
 
 def e_handler500(request):
     return render(request, 'pages/500.html', status=500)
+
+def packaging(request,product_id):
+    product = get_object_or_404(Product, id=product_id)
+    packaging = product.packages.all()
+    context = {'packaging': packaging}
+    return render(request, 'pages/packaging.html', context)
  
