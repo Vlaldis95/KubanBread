@@ -24,7 +24,7 @@
           <p class="product__text product__package">
             Упаковка -
             {%for i in packaging%}
-            <a target="_blank" href="{%url 'packaging' product.id %}" class="product__link">
+            <a href="{%url 'packaging' product.id %}" class="product__link">
               {{i.name}}
             </a>
             {% endfor %}

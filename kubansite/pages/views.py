@@ -41,45 +41,51 @@ def contacts(request):
                           RECIPIENTS_EMAIL)
                 flag = True
                 form = ContactForm()
-                return render(request,
-                              'pages/contacts.html', {'flag': flag, 'form': form})
+                return render(
+                    request, 'pages/contacts.html',
+                    {'flag': flag, 'form': form})
             except BadHeaderError:
                 return HttpResponse('Найден некорректный заголовок')
     form = ContactForm()
     return render(request, 'pages/contacts.html', {'form': form})
 
+
 def category(request, slug):
     """Страница категории в каталоге."""
-    category = get_object_or_404(Category,slug=slug)
+    category = get_object_or_404(Category, slug=slug)
     products = category.products.all()
     page_obj = paginate_products(request, products)
     context = {'category': category, 'page_obj': page_obj}
-    return render(request,'pages/category.html', context)
+    return render(request, 'pages/category.html', context)
+
 
 def katalog(request):
     """Страница категорий в каталоге."""
     category = Category.objects.all()
     page_obj = paginate_products(request, category)
-    context = {'page_obj':page_obj,}
-    return render(request, 'pages/katalog.html',context)
+    context = {'page_obj': page_obj, }
+    return render(request, 'pages/katalog.html', context)
+
 
 def product(request, product_id):
     """Страница определенного продукта в каталоге."""
     product = get_object_or_404(Product, id=product_id)
     packaging = product.packages.all()
-    context = {'product': product, 'packaging':packaging}
-    return render(request,'pages/product.html', context)
+    context = {'product': product, 'packaging': packaging}
+    return render(request, 'pages/product.html', context)
 
 
 def page_not_found(request, exception):
-    return render(request, 'pages/404.html', {'path': request.path}, status=404)
+    return render(request,
+                  'pages/404.html', {'path': request.path}, status=404)
+
 
 def e_handler500(request):
     return render(request, 'pages/500.html', status=500)
 
-def packaging(request,product_id):
+
+def packaging(request, product_id):
     product = get_object_or_404(Product, id=product_id)
     packaging = product.packages.all()
     context = {'packaging': packaging}
     return render(request, 'pages/packaging.html', context)
- 
