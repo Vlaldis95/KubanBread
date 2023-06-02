@@ -16,7 +16,7 @@ class ContactForm(forms.Form):
     e_mail = forms.EmailField(widget=forms.EmailInput(
         attrs={'placeholder': '*Ваш e-mail',
                'class': 'popup__input form__input',
-               'pattern': "[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+"}),
+               'pattern': "[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+"}),
                 max_length=50)  # Электронная почта
     region = forms.CharField(
         widget=forms.TextInput(
