@@ -87,5 +87,5 @@ def e_handler500(request):
 def packaging(request, product_id):
     product = get_object_or_404(Product, id=product_id)
     packaging = product.packages.all()
-    context = {'packaging': packaging}
+    context = {'packaging': packaging, 'product': product}
     return render(request, 'pages/packaging.html', context)

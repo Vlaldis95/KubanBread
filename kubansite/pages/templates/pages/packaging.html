@@ -7,6 +7,7 @@
 {% block content %}
 <main class="content">
   <section class="packaging">
+     <a class="link" href="{%url 'product' product.id %}">← Назад</a>
     <h1 class="section-title packaging__title">Упаковка</h1>
     <ul class="packaging__list">
       {% for i in packaging %}
