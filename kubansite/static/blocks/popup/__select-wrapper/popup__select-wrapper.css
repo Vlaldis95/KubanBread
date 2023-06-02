@@ -1,5 +1,6 @@
 .popup__select-wrapper {
   position: relative;
+  margin: 8px 0;
 }
 
 .popup__select-wrapper::after {

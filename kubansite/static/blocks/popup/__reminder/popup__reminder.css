@@ -1,3 +1,4 @@
 .popup__reminder {
   margin: 0 0 20px;
+  color: var(--color-light);
 }
