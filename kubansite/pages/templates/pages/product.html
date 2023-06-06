@@ -23,11 +23,13 @@
           <p class="product__text product__date">Срок годности - {{product.expiration_date}}</p><!--срок годности-->
           <p class="product__text product__package">
             <!--Упаковка {{product.packaging}}-->
-            <!--{% if exists %} <!--если существуют фото упаковки -->
-<!--{% for i in images %}-->
-<!--<img class="product__image" src={{i.image.url}}>
-{% endfor %}
-{% endif %}-->
+            <!--{% if exists %} если существуют фото упаковки 
+            {% for i in images %} -этот блок для карусели
+            <img class="product__image" src={{i.image.url}}> - каждое фото упаковки по отдельности 
+            {% endfor %}
+            {% else % }
+            Этот блок для случая только одной картинки продукта
+             {% endif %}-->
           </p><!--вид упаковки-->
           <p class="product__text product__quantity">Количество вложения - {{product.quantity_a}}</p><!--количество вложения-->
         </div>
