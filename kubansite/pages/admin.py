@@ -2,19 +2,17 @@ import django.contrib.auth.admin
 import django.contrib.auth.models
 from django.contrib import admin, auth
 
-from .models import Category, Packaging, Product
+from .models import Category, Product, Gallery
 
-
-class PackagingAdmin(admin.ModelAdmin):
-    list_display = ('name', 'photo', 'description')
-    list_per_page = 10
-    search_fields = ('name',)
-    list_filter = ('name',)
+class GalleryInline(admin.TabularInline):
+    fk_name = 'product'
+    model = Gallery
 
 
 class ProductAdmin(admin.ModelAdmin):
+    inlines = [GalleryInline,]
     list_display = (
-        'title', 'category', 'photo',
+        'title', 'category',
         'weight', 'quantity_a', 'expiration_date')
     list_per_page = 10
     search_fields = ('title',)
@@ -30,6 +28,5 @@ class CategoryAdmin(admin.ModelAdmin):
 
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(Product, ProductAdmin)
-admin.site.register(Packaging, PackagingAdmin)
 admin.site.unregister(auth.models.User)
 admin.site.unregister(auth.models.Group)

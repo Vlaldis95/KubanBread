@@ -3,7 +3,7 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path
 
-from pages.views import category, contacts, index, katalog, packaging, product
+from pages.views import category, contacts, index, katalog, product
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -12,7 +12,6 @@ urlpatterns = [
     path('catalog/', katalog, name='katalog'),
     path('category/<slug:slug>/', category, name='category'),
     path('product/<int:product_id>/', product, name='product'),
-    path('packaging/<int:product_id>', packaging, name = 'packaging')
 ]
 handler404 = 'pages.views.page_not_found'
 handler500 = 'pages.views.e_handler500'

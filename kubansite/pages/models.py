@@ -2,23 +2,6 @@ from django.db import models
 from django.urls import reverse
 
 
-class Packaging(models.Model):
-    name = models.CharField(max_length=50, verbose_name='Название упаковки')
-    photo = models.ImageField(
-        verbose_name='Изображение',
-        blank=True,
-        upload_to='packages')
-    description = models.TextField(
-        verbose_name='Описание', max_length=200, blank=True)
-
-    def __str__(self):
-        return self.name
-
-    class Meta:
-        verbose_name = 'Упаковка'
-        verbose_name_plural = 'Виды упаковки'
-
-
 class Category(models.Model):
     title = models.CharField(max_length=100, verbose_name='Название категории')
     slug = models.SlugField(
@@ -41,16 +24,14 @@ class Category(models.Model):
 
 
 class Product(models.Model):
-    packages = models.ManyToManyField(
-        Packaging, related_name="products_packages", verbose_name='упаковка',
-        max_length=10)
     pub_date = models.DateTimeField('Дата загрузки', auto_now=True)
     photo = models.ImageField(
-        verbose_name='Изображение',
+        verbose_name='Фото продукта',
         blank=True,
-        upload_to='pages')
+        upload_to='product_images')
     weight = models.CharField(verbose_name='Вес', max_length=10)
     title = models.CharField(verbose_name='Название', max_length=100)
+    packaging = models.CharField(verbose_name='Виды упаковки', max_length=100,blank=True)
     expiration_date = models.CharField(
         verbose_name='Срок годности',
         max_length=15)
@@ -72,3 +53,11 @@ class Product(models.Model):
     class Meta:
         verbose_name = 'Продукт'
         verbose_name_plural = 'Продукты'
+
+class Gallery(models.Model):
+    image = models.ImageField(upload_to='gallery', verbose_name= 'Фото', blank=True)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='images')
+    
+    class Meta:
+        verbose_name = 'Пункт'
+        verbose_name_plural = 'Фото упаковки'
