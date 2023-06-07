@@ -8,6 +8,7 @@
   <meta name="keywords" content="{% block keywords %}Default title{% endblock keywords %}">
   <meta name="description" content="{% block description %}Default title{% endblock description %}">
   <link rel="icon" type="image/x-icon" href="{% static 'images/favicon.ico' %}">
+  {% block css %}{% endblock css %}
   <link rel="stylesheet" href="{% static 'pages/index.css' %}">
   <title>{% block title %}Default title{% endblock title %}</title>
 </head>
@@ -15,5 +16,6 @@
   {% include "header.html" %}
   {% block content%}{% endblock content %}
   {% include "footer.html" %}
+  {% block script %}{% endblock script %}
 </body>
 </html>
