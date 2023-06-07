@@ -13,14 +13,14 @@
     <div class="rent__info">
       <h1 class="rent__section-title">вкус детства на&nbsp;вашем столе</h1>
       <div class="rent__btn-container">
-        <a href="{% url 'contacts' %}" class="btn btn-light button_type_contact">Связаться с нами</a>
+        <a href="{% url 'contacts' %}#cooperation" class="btn btn-light button_type_contact">Связаться с нами</a>
         <a href="{%static './catalog/catalog.pdf' %}" download class="btn btn-dark">Скачать каталог</a>
       </div>
     </div>
     <img src="{%static './images/welcome.png'%}" alt="" class="rent__image">
   </section>
   <section class="guide">
-    <img class="guide__image wow bounceInDown" data-wow-duration="1.2s" src="{%static './images/kolos.svg'%}" alt="колосок">
+    <img class="guide__image wow flip" data-wow-iteration="infinite" data-wow-duration="3s" src="{%static './images/kolos.svg'%}" alt="колосок">
     <p class="text guide__text">«Кубанская кормилица — кондитерское производство, которое знают и любят более 20 лет.
       Мы заботимся о качестве нашей продукции, используем только самые свежие и качественные ингредиенты, делаем все,
       чтобы удовлетворить вкусовые потребности наших клиентов».</p>

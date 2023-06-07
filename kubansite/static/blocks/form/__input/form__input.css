@@ -11,5 +11,5 @@
 }
 
 .form__input::placeholder {
-  color: #c4c4c4;
+  color: rgba(32, 19, 19, 0.5);
 }

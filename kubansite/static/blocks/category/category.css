@@ -131,15 +131,10 @@
 }
 
 .product__image {
-  width: 474px;
-  height: 326px;
+  width: 404px;
+  height: 246px;
   object-fit: contain;
   object-position: center;
-  padding: 40px 32px;
-  background: var(--color-dark);
-  border: 2px solid var(--color-gold);
-  border-radius: 50px;
-  box-sizing: border-box;
 }
 
 .product__title {
@@ -178,6 +173,64 @@
   align-self: flex-start;
 }
 
+.product__slider-container {
+  margin: 0;
+  max-width: 474px;
+  width: 100%;
+  display: grid;
+  padding: 40px 32px 50px;
+  background: var(--color-dark);
+  border: 2px solid var(--color-gold);
+  border-radius: 50px;
+}
+
+.product__slider {
+  background-color: transparent;
+  position: relative;
+  width: 75%;
+  margin: 0 auto;
+}
+
+.product__slider-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.product__slider-item {
+  display: flex;
+  justify-content: center;
+}
+
+.slider__control {
+  width: 36px;
+  height: 38px;
+  background-color: transparent;
+  position: absolute;
+  border: none;
+  background-image: url('../../images/slide-arrow.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  z-index: 1;
+  cursor: pointer;
+  top: 40%;
+}
+
+.slider__control:active {
+  background-image: url('../../images/slide-arrow-active.svg');
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.slider__control_prev {
+  transform: rotate(180deg);
+  left: 4%;
+}
+
+.slider__control_next {
+  right: 4%;
+}
+
 @media screen and (max-width: 980px) {
   .product {
     width: calc(100% - 2*20px);
@@ -195,6 +248,17 @@
 }
 
 @media screen and (max-width: 540px) {
+  .product__slider-container {
+    width: 320px;
+    box-sizing: border-box;
+    height: 225px;
+    padding: 23px 15px;
+  }
+
+  .product__slider {
+    display: grid;
+    align-items: center;
+  }
 
   .product__title {
     margin: 0;
@@ -203,9 +267,8 @@
   }
 
   .product__image {
-    width: 320px;
-    height: 225px;
-    padding: 23px 31px;
+    width: 80%;
+    height: 90%;
   }
 
   .product__info {

@@ -10,3 +10,14 @@
  margin: 140px auto 0;
 }
 
+@media screen and (max-width: 900px) {
+  .footer {
+    margin: 120px auto 0;
+   }
+}
+
+@media screen and (max-width: 600px) {
+  .footer {
+    margin: 100px auto 0;
+   }
+}

@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 {% block title %}Каталог{% endblock title %}
+{% block css %}<link rel="stylesheet" href="{% static 'pages/simple-adaptive-slider.css' %}">{% endblock css %}
 {% block keywords %}кондитерские изделия, оптом, конфеты, печенье, торты{% endblock keywords %}
 {% block description %}На кондитерском производстве Кубанская кормилица вы можете приобрести по оптовым ценам
 такие изделия, как конфеты, печенье, пряники, сушки, слойки и батончики{% endblock description %}
@@ -15,28 +16,36 @@
       <a href="" class="breadcrumbs__link breadcrumbs__link_active">{{product.title}}</a>
     </nav>
     <div class="product__container">
-      <img class="product__image" src={{product.photo.url}}> <!--картинка-->
-      <div class="product__info">
-        <h1 class="product__title">{{product.title}}</h1><!--название товара-->
-        <div class="product__description">
-          <p class="product__text product__weight">{{product.weight}}</p><!--вес-->
-          <p class="product__text product__date">Срок годности - {{product.expiration_date}}</p><!--срок годности-->
-          <p class="product__text product__package">
-            <!--Упаковка {{product.packaging}}-->
-            <!--{% if exists %} если существуют фото упаковки 
-            {% for i in images %} -этот блок для карусели
-            <img class="product__image" src={{i.image.url}}> - каждое фото упаковки по отдельности 
-            сюда наверное нужно перенести ссылку на фото продукта
+      <div class="product__slider-container itcss">
+        <button class="slider__control slider__control_prev" href="#" role="button" data-slide="prev"></button>
+        <div class="product__slider itcss__wrapper">
+          <ul class="product__slider-list itcss__items">
+            <li class="product__slider-item itcss__item"><img class="product__image" src={{product.photo.url}}></li>
+            {% for i in images %}
+            <li class="product__slider-item itcss__item">
+              <img class="product__image" src={{i.image.url}}>
+            </li>
             {% endfor %}
-            {% else % }
-            Этот блок для случая отстутствия фото упаковки, здесь только ссылка на картинку продукта
-             {% endif %}-->
-          </p><!--вид упаковки-->
-          <p class="product__text product__quantity">Количество вложения - {{product.quantity_a}}</p><!--количество вложения-->
+          </ul>
+        </div>
+        <button class="slider__control slider__control_next" href="#" role="button" data-slide="next"></button>
+      </div>
+      <div class="product__info">
+        <h1 class="product__title">{{product.title}}</h1>
+        <div class="product__description">
+          <p class="product__text product__weight">{{product.weight}}</p>
+          <p class="product__text product__date">Срок годности - {{product.expiration_date}}</p>
+          <p class="product__text product__package">Упаковка - <a href="" class="product__link">{{product.packaging}}</a></p>
+          <p class="product__text product__quantity">Количество вложения - {{product.quantity_a}}</p>
         </div>
       </div>
     </div>
   </section>
 </main>
-<script type="module" src="{%static './scripts/index.js' %}"></script>
 {% endblock content %}
+{% block script %}
+<script type="module" src="{%static './scripts/index.js' %}"></script>
+<script type="module"src="{%static './scripts/product.js' %}"></script>
+<script type="module" name="slider-default" src="{% static 'scripts/simple-adaptive-slider.min.js' %}"></script>
+<script type="module" name="slider" src="{%static './scripts/slider.js' %}"></script>
+{% endblock script %}
