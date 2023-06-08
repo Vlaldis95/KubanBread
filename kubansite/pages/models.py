@@ -1,6 +1,15 @@
 from django.db import models
 from django.urls import reverse
 
+class WeightCategory(models.Model):
+    title = models.CharField(max_length=100, verbose_name='фасовка')
+    
+    class Meta:
+        verbose_name = 'Категория фасовки'
+        verbose_name_plural = 'Категории фасовки'
+    
+    def __str__(self):
+        return self.title
 
 class Category(models.Model):
     title = models.CharField(max_length=100, verbose_name='Название категории')
@@ -29,6 +38,12 @@ class Product(models.Model):
         verbose_name='Фото продукта',
         blank=True,
         upload_to='product_images')
+    weight_category = models.ForeignKey(
+        WeightCategory,
+        blank=True,
+        null=True, on_delete=models.CASCADE,
+        related_name='products',
+        verbose_name='Весовая категория',)
     weight = models.CharField(verbose_name='Вес', max_length=10)
     title = models.CharField(verbose_name='Название', max_length=100)
     packaging = models.CharField(verbose_name='Виды упаковки', max_length=100,blank=True)
@@ -61,3 +76,4 @@ class Gallery(models.Model):
     class Meta:
         verbose_name = 'Пункт'
         verbose_name_plural = 'Фото упаковки'
+     

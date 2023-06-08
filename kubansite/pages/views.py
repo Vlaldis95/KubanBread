@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, render
 
 from kubansite.settings import RECIPIENTS_EMAIL
-from pages.forms import ContactForm
+from pages.forms import ContactForm, WeightForm
 
 from .models import Category, Product
 from .utils import paginate_products
@@ -53,10 +53,16 @@ def contacts(request):
 def category(request, slug):
     """Страница категории в каталоге."""
     category = get_object_or_404(Category, slug=slug)
+    category_id=category.id
     products = category.products.all()
+    form = WeightForm(request.POST)
+    if form.is_valid():
+        weight_category = form.cleaned_data.get('title')
+        products = weight_category.products.filter(category_id=category_id)
+        page_obj = paginate_products(request, products)
+        return render(request, 'pages/category.html', {'category': category, 'page_obj': page_obj, 'form': form})
     page_obj = paginate_products(request, products)
-    context = {'category': category, 'page_obj': page_obj}
-    return render(request, 'pages/category.html', context)
+    return render(request, 'pages/category.html', {'category': category, 'page_obj': page_obj, 'form': form})
 
 
 def katalog(request):

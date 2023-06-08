@@ -13,6 +13,10 @@
       <a href="" class="breadcrumbs__link breadcrumbs__link_active">{{category.title}}</a>
     </nav>
     <h1 class="category__title">{{category.title}}</h1>
+    <!--<form action="" method="post">{% csrf_token %} 
+      {{form.title}}
+      <input type="submit" value="Create" /> форма 
+  </form> --> 
     <ul class="table">
       {%for i in page_obj%}
       <li class="table__item-container">
@@ -22,10 +26,6 @@
               <p class="table__text">{{i.title}}</p>
           </div>
         </a>
-        <!-- {{i.packaging}}
-        {{i.weight}}
-        {{i.expiration_date}}
-        {{i.quantity_a}} -->
       </li>
       {% endfor %}
     </ul>

@@ -2,7 +2,12 @@ import django.contrib.auth.admin
 import django.contrib.auth.models
 from django.contrib import admin, auth
 
-from .models import Category, Product, Gallery
+from .models import Category, Product, Gallery, WeightCategory
+
+class WeightCategoryAdmin(admin.ModelAdmin):
+    list_display = ('title',)
+    list_per_page = 10
+    list_filter = ('title',)
 
 class GalleryInline(admin.TabularInline):
     fk_name = 'product'
@@ -28,5 +33,6 @@ class CategoryAdmin(admin.ModelAdmin):
 
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(Product, ProductAdmin)
+admin.site.register(WeightCategory, WeightCategoryAdmin)
 admin.site.unregister(auth.models.User)
 admin.site.unregister(auth.models.Group)
