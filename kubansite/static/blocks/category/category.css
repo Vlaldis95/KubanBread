@@ -187,7 +187,7 @@
 .product__slider {
   background-color: transparent;
   position: relative;
-  width: 75%;
+  width: 80%;
   margin: 0 auto;
 }
 
@@ -201,6 +201,8 @@
   display: flex;
   justify-content: center;
 }
+
+
 
 .slider__control {
   width: 36px;
@@ -266,8 +268,12 @@
     font-size: 16px;
   }
 
+  .product__slider {
+    width: 75%;
+  }
+
   .product__image {
-    width: 80%;
+    width: 90%;
     height: 90%;
   }
 
