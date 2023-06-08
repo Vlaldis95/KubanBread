@@ -2,4 +2,6 @@
   position: relative;
   display: grid;
   align-items: center;
+  width: calc(100% - 2*20px);
+  margin: 0 auto;
 }
