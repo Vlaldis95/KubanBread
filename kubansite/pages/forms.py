@@ -40,10 +40,12 @@ class ContactForm(forms.Form):
         widget=forms.CheckboxInput(
             attrs={'class':
                    'popup__input form__input form__input_el_extra_options'}))
-    
+
 class WeightForm(forms.ModelForm):
-    title = forms.ModelChoiceField(empty_label=None, queryset=WeightCategory.objects.all(), widget=forms.widgets.Select())
+    title = forms.ModelChoiceField(empty_label=None, queryset=WeightCategory.objects.all(),
+    widget=forms.widgets.Select(
+      attrs={'class': 'filter__input'}))
     class Meta:
         model =  WeightCategory
         fields = ['title']
-     
+

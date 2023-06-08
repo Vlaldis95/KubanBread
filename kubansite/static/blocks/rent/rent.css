@@ -2,7 +2,7 @@
   display: flex;
   overflow-x: hidden;
   position: relative;
-  min-height: 580px;
+  min-height: 550px;
 }
 
 @media screen and (max-width: 980px) {

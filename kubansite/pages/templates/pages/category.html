@@ -7,16 +7,20 @@
 {% block content %}
 <main class="content">
   <section class="category">
-    <nav class="breadcrumbs">
-      <a href="{% url 'katalog' %}" class="breadcrumbs__link">Каталог</a>
-      <span class="breadcrumbs__arrow_active"></span>
-      <a href="" class="breadcrumbs__link breadcrumbs__link_active">{{category.title}}</a>
-    </nav>
+    <div class="category__nav">
+      <nav class="breadcrumbs">
+        <a href="{% url 'katalog' %}" class="breadcrumbs__link">Каталог</a>
+        <span class="breadcrumbs__arrow_active"></span>
+        <a href="" class="breadcrumbs__link breadcrumbs__link_active">{{category.title}}</a>
+      </nav>
+      <form action="" class="filter__form" method="post">{% csrf_token %}
+        <div class="filter__input-container">
+          {{form.title}}
+        </div>
+        <!-- <input type="submit" value="Create" /> форма -->
+      </form>
+    </div>
     <h1 class="category__title">{{category.title}}</h1>
-    <!--<form action="" method="post">{% csrf_token %} 
-      {{form.title}}
-      <input type="submit" value="Create" /> форма 
-  </form> --> 
     <ul class="table">
       {%for i in page_obj%}
       <li class="table__item-container">
@@ -32,5 +36,8 @@
   {% include 'paginator.html' %}
   </section>
 </main>
-<script type="module" src="{% static './scripts/index.js' %}"></script>
+{% block script %}
+<script type="module" src="{%static './scripts/index.js' %}"></script>
+<script type="module"src="{%static './scripts/category.js' %}"></script>
+{% endblock script %}
 {% endblock content %}
