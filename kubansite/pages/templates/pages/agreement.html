@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Пользовательское соглашение{% endblock title %}
+{% block keywords %}кондитерские изделия, оптом, конфеты, печенье, торты{% endblock keywords %}
+{% block description %}На кондитерском производстве Кубанская кормилица вы можете приобрести по оптовым ценам
+такие изделия, как конфеты, печенье, пряники, сушки, слойки и батончики{% endblock description %}
+{% block content %}
+<main class="content">
+  <section class="agreement">
+    <h1 class="section-title agreement__title">Пользовательское Соглашение</h1>
+    <p class="agreement__text">Настоящее Пользовательское Соглашение (Далее Соглашение) регулирует отношения между ИП Цыганкова Ирина Владимировна (далее Кубанская кормилица или Администрация) с одной стороны и пользователем сайта с другой.
+      Сайт Кубанская кормилица не является средством массовой информации.</p>
+    <p class="agreement__text">Используя сайт, Вы соглашаетесь с условиями данного соглашения.</p>
+    <p class="agreement__text agreement__text_type_accent">Если Вы не согласны с условиями данного соглашения, не используйте сайт Кубанская кормилица!</p>
+    <ul class="agreement__list">
+      <li class="agreement__item">
+        <h3 class="agreement__subtitle">Предмет соглашения</h3>
+        <p class="agreement__text agreement__text_type_accent">Администрация предоставляет пользователю право на размещение на сайте следующей информации:</p>
+        <ul class="agreement__sublist">
+          <li class="agreement__item">Текстовой информации</li>
+          <li class="agreement__item">Ссылок на материалы, размещенные на других сайтах</li>
+        </ul>
+      </li>
+      <li class="agreement__item">
+        <h3 class="agreement__subtitle">Права и обязанности сторон</h3>
+        <ul class="agreement__sublist">
+          <li class="agreement__item">
+            <p class="agreement__text_type_accent">Пользователь имеет право:</p>
+            <ul class="agreement__sublist">
+              <li class="agreement__item">осуществлять поиск информации на сайте</li>
+              <li class="agreement__item">получать информацию на сайте</li>
+              <li class="agreement__item">использовать информацию сайта в личных некоммерческих целях</li>
+            </ul>
+          </li>
+          <li class="agreement__item">
+            <p class="agreement__text_type_accent">Администрация имеет право:</p>
+            <ul class="agreement__sublist">
+              <li class="agreement__item">по своему усмотрению и необходимости создавать, изменять, отменять правила</li>
+              <li class="agreement__item">ограничивать доступ к любой информации на сайте</li>
+              <li class="agreement__item">создавать, изменять, удалять информацию</li>
+            </ul>
+          </li>
+          <li class="agreement__item">
+            <p class="agreement__text_type_accent">Пользователь обязуется:</p>
+            <ul class="agreement__sublist">
+              <li class="agreement__item">обеспечить достоверность предоставляемой информации</li>
+              <li class="agreement__item">не нарушать работоспособность сайта</li>
+              <li class="agreement__item">не использовать скрипты (программы) для автоматизированного сбора информации и/или взаимодействия с Сайтом и его Сервисами</li>
+            </ul>
+          </li>
+          <li class="agreement__item">
+            <p class="agreement__text_type_accent">Администрация обязуется:</p>
+            <ul class="agreement__sublist">
+              <li class="agreement__item">поддерживать работоспособность сайта за исключением случаев, когда это невозможно по независящим от Администрации причинам.</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li class="agreement__item">
+        <h3 class="agreement__subtitle">Ответственность сторон</h3>
+        <ul class="agreement__sublist">
+          <li class="agreement__item">администрация не несет никакой ответственности за достоверность информации, скопированной из других источников</li>
+          <li class="agreement__item">администрация не несёт ответственность за несовпадение ожидаемых Пользователем и реально полученных услуг</li>
+          <li class="agreement__item">администрация не несет никакой ответственности за услуги, предоставляемые третьими лицами</li>
+          <li class="agreement__item">в случае возникновения форс-мажорной ситуации (боевые действия, чрезвычайное положение, стихийное бедствие и т. д.) Администрация не гарантирует сохранность информации, размещённой Пользователем, а также бесперебойную работу информационного ресурса</li>
+        </ul>
+      </li>
+      <li class="agreement__item">
+        <h3 class="agreement__subtitle">Условия действия Соглашения</h3>
+        <p class="agreement__text">Данное Соглашение вступает в силу при любом использовании данного сайта.
+          Соглашение перестает действовать при появлении его новой версии. Администрация оставляет за собой право
+          в одностороннем порядке изменять данное соглашение по своему усмотрению. Администрация не оповещает
+          пользователей об изменении в Соглашении.</p>
+      </li>
+    </ul>
+  </section>
+</main>
+{% block script %}
+<script type="module" src="{%static './scripts/index.js' %}"></script>
+{% endblock script %}
+{% endblock content %}

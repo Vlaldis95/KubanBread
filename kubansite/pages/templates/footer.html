@@ -5,7 +5,7 @@
       <a href="{% url 'index' %}" class="footer__column-link">
         <img src="{% static './images/logo.svg' %}" alt="Логотип компании" class="footer__logo">
       </a>
-      <a href="#" class="link footer__policy footer__policy_type_desktop">Политика конфиденциальности</a>
+      <a href="{% url 'privacy' %}" class="link footer__policy footer__policy_type_desktop">Политика конфиденциальности</a>
     </div>
     <nav class="footer__column footer__column_content_houses">
       <ul class="footer__column-links">
@@ -52,7 +52,7 @@
           </li>
         </ul>
       </nav>
-      <a href="#" class="link footer__policy footer__policy_type_mobile">Политика конфиденциальности</a>
+      <a href="{% url 'privacy' %}" class="link footer__policy footer__policy_type_mobile">Политика конфиденциальности</a>
     </nav>
   </div>
 </footer>

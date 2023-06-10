@@ -176,6 +176,11 @@
 
 @import url('../blocks/category/category.css');
 
+@import url('../blocks/privacy/privacy.css');
+
+@import url('../blocks/agreement/agreement.css');
+
+
 @import url('../blocks/not-found/not-found.css');
 
 
