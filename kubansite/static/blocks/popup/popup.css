@@ -43,6 +43,11 @@
   margin: 10px 0 5px;
   font-size: 14px;
   font-family: inherit;
+  border-radius: 20px;
+}
+
+.form__input::placeholder {
+  color: #a4a4a4;
 }
 .form__input_el_extra_options {
   position: absolute;

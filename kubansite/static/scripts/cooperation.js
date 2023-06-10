@@ -43,22 +43,8 @@ selectChanel.addEventListener('input', (e) => {
 // перемещение к элементам сайта
 anchors.forEach(anchor => {
   anchor.addEventListener('click', (e) => {
-    e.preventDefault();
-    const anchorHref = anchor.getAttribute('href');
-    const index = anchorHref.lastIndexOf("#");
-
-    const blockId = anchorHref.substr(index+1);
-    const elementBlockId = document.getElementById(blockId);
 
     toggleHeaderMenu();
-
-    if(elementBlockId) {
-      elementBlockId.scrollIntoView({
-        block: "start",
-        inline: "start"});
-    } else {
-      window.location.href = anchorHref
-    }
 
   });
 });

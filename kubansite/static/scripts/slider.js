@@ -4,8 +4,6 @@ const sliderContainer = document.querySelector('.product__slider-container');
 const sliderList = document.querySelectorAll('.product__slider-item');
 const sliderButtons = document.querySelectorAll('.slider__control');
 
-const slideItem = document.querySelector('.itcss');
-
 if(sliderList.length > 1) {
   document.addEventListener('DOMContentLoaded', () => {
     // инициализация слайдера
