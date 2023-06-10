@@ -90,5 +90,12 @@ def page_not_found(request, exception):
 def e_handler500(request):
     return render(request, 'pages/500.html', status=500)
 
+def privacy(request):
+    return render(request,'pages/privacy.html')
+
+def agreement(request):
+    return render(request,'pages/agreement.html')
+
+
 
 
