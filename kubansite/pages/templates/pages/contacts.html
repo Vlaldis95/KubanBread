@@ -83,10 +83,10 @@
           </div>
           <p class="text popup__reminder"> *поля обязательные к заполнению </p>
           <div class="option-template-container">
-            <label for="id_rules" class="text service-form__label">
+            <label for="id_rules" class="service-form__label">
               {{ form.rules }}
               <span class="form__pseudo-item form__pseudo-item_type_radio"></span>
-              Я принимаю условия пользовательского соглашения
+              <p class="service-form__label-text">Я принимаю условия <a class="popup__link" target="_blank" href="{% url 'agreement' %}">пользовательского соглашения</a></p>
             </label>
             <span class="popup__error {{form.rules.name}}-error"></span>
           </div>
@@ -101,5 +101,7 @@
     </div>
   </section>
 </main>
-<script type="module" src="{% static 'scripts/cooperation.js' %}"></script>
 {% endblock content %}
+{% block script %}
+  <script defer src="{% static 'scripts/cooperation.js' %}"></script>
+{% endblock script %}

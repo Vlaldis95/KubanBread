@@ -17,12 +17,12 @@ class ContactForm(forms.Form):
     e_mail = forms.EmailField(widget=forms.EmailInput(
         attrs={'placeholder': '*Ваш e-mail',
                'class': 'popup__input form__input',
-               'pattern': "[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+"}),
+               'pattern': "[a-zA-Z0-9_\-]+@[a-zA-Z]+\.[a-z]+"}),
                 max_length=50)  # Электронная почта
     region = forms.CharField(
         widget=forms.TextInput(
             attrs={'placeholder': 'Ваш регион (страна, город, район, населенный пункт)',
-                   'class': 'popup__input form__input'}), max_length=100, required=False)  # Регион
+                   'class': 'form__input'}), max_length=100, required=False)  # Регион
     sales_channel = forms.ChoiceField(
         choices=(('Retail', 'Retail'),
                  ('Дистрибуция', 'Дистрибуция'),
@@ -34,7 +34,7 @@ class ContactForm(forms.Form):
     text = forms.CharField(
         widget=forms.Textarea(
             attrs={'placeholder': 'Сообщение',
-                   'class': 'popup__input popup__input_type_text form__input'}), max_length=200, required=False)
+                   'class': 'popup__input_type_text form__input'}), max_length=200, required=False)
     rules = forms.BooleanField(
         label='Я принимаю условия пользовательского соглашения',
         widget=forms.CheckboxInput(

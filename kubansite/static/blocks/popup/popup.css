@@ -13,14 +13,12 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-column-gap: 12px;
-     -moz-column-gap: 12px;
-          column-gap: 12px;
   -webkit-box-align: flex-start;
       -ms-flex-align: flex-start;
           align-items: flex-start;
   color: var(--color-light);
   position: relative;
+  line-height: 1.19;
 }
 
 .service-form__title_visible {
@@ -43,6 +41,11 @@
   margin: 10px 0 5px;
   font-size: 14px;
   font-family: inherit;
+  border-radius: 20px;
+}
+
+.form__input::placeholder {
+  color: #a4a4a4;
 }
 .form__input_el_extra_options {
   position: absolute;
@@ -90,6 +93,7 @@
   vertical-align: middle;
   width: 18px;
   height: 18px;
+  margin-right: 12px;
 }
 
 .form__pseudo-item_type_radio {
@@ -97,4 +101,14 @@
   background-position: center;
   background-repeat: no-repeat;
   cursor: pointer;
+}
+
+.popup__link {
+  text-decoration: underline;
+  color: var(--color-light)
+}
+
+.service-form__label-text {
+  margin: 0;
+  line-height: 1.19;
 }

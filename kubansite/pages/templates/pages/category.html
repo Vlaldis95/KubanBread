@@ -37,7 +37,6 @@
   </section>
 </main>
 {% block script %}
-<script type="module" src="{%static './scripts/index.js' %}"></script>
-<script type="module"src="{%static './scripts/category.js' %}"></script>
+  <script defer src="{%static './scripts/category.js' %}"></script>
 {% endblock script %}
 {% endblock content %}
