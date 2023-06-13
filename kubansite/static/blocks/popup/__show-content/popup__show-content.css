@@ -1,7 +1,0 @@
-.popup__show-content {
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  box-sizing: border-box;
-  position: relative;
-}
