@@ -1,9 +1,0 @@
-.btn-dark {
-  background-color: transparent;
-  border: 2px solid var(--color-gold);
-  color: var(--color-gold);
-}
-
-.btn-dark:hover {
-  background-color: #d8b06740;
-}
