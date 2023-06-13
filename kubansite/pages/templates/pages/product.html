@@ -45,8 +45,5 @@
 </main>
 {% endblock content %}
 {% block script %}
-<script type="module" src="{%static './scripts/index.js' %}"></script>
-<script type="module"src="{%static './scripts/product.js' %}"></script>
-<script type="module" name="slider-default" src="{% static 'scripts/simple-adaptive-slider.min.js' %}"></script>
-<script type="module" name="slider" src="{%static './scripts/slider.js' %}"></script>
+<script defer name="slider" src="{%static './scripts/slider.js' %}"></script>
 {% endblock script %}

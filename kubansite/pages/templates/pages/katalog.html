@@ -2,8 +2,8 @@
 {% load static %}
 {% block title %}Каталог{% endblock title %}
 {% block keywords %}кондитерские изделия, оптом, конфеты, печенье, торты{% endblock keywords %}
-{% block description %}На кондитерском производстве Кубанская кормилица вы можете приобрести по оптовым ценам
-такие изделия, как конфеты, печенье, пряники, сушки, слойки и батончики{% endblock description %}
+{% block description %}На странице представлен каталог, который включается такое категории, как конфеты, печенье, пряники,
+сушки, слойки и батончики{% endblock description %}
 {% block content %}
 <main class="content">
   <section class="catalog">
@@ -22,6 +22,5 @@
     </ul>
   </section>
 </main>
-<script type="module" src="{%static './scripts/index.js' %}"></script>
 {% include 'paginator.html' %}
 {% endblock content %}

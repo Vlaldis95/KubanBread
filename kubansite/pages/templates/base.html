@@ -10,12 +10,13 @@
   <link rel="icon" type="image/x-icon" href="{% static 'images/favicon.ico' %}">
   {% block css %}{% endblock css %}
   <link rel="stylesheet" href="{% static 'pages/index.css' %}">
-  <title>{% block title %}Default title{% endblock title %}</title>
+  <title>{% block title %}{% endblock title %}</title>
 </head>
 <body class="root">
   {% include "header.html" %}
   {% block content%}{% endblock content %}
   {% include "footer.html" %}
+  <script defer src="{% static './scripts/index.js' %}"></script>
   {% block script %}{% endblock script %}
 </body>
 </html>
