@@ -159,8 +159,6 @@ cython_debug/
 #.idea/
 
 # файлы разработки фронтенда
-kubansite/static/images
 kubansite/static/pages/dev
 kubansite/static/scripts/dev
 kubansite/static/blocks
-
