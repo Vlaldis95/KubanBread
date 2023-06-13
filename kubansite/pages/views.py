@@ -5,13 +5,14 @@ from django.shortcuts import get_object_or_404, render
 from kubansite.settings import RECIPIENTS_EMAIL
 from pages.forms import ContactForm, WeightForm
 
-from .models import Category, Product
+from .models import Category, Product, Catalog
 from .utils import paginate_products
 
 
 def index(request):
     """Главная страница"""
-    return render(request, 'pages/index.html')
+    catalog = Catalog.objects.all()
+    return render(request, 'pages/index.html', {'catalog': catalog})
 
 
 def contacts(request):

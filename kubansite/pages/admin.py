@@ -2,7 +2,10 @@ import django.contrib.auth.admin
 import django.contrib.auth.models
 from django.contrib import admin, auth
 
-from .models import Category, Product, Gallery, WeightCategory
+from .models import Category, Product, Gallery, WeightCategory, Catalog
+
+class CatalogAdmin(admin.ModelAdmin):
+    list_display = ('title',)
 
 class WeightCategoryAdmin(admin.ModelAdmin):
     list_display = ('title',)
@@ -30,7 +33,7 @@ class CategoryAdmin(admin.ModelAdmin):
     list_per_page = 10
     list_filter = ('title',)
 
-
+admin.site.register(Catalog, CatalogAdmin)
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(Product, ProductAdmin)
 admin.site.register(WeightCategory, WeightCategoryAdmin)

@@ -14,7 +14,9 @@
       <h1 class="rent__section-title">вкус детства на&nbsp;вашем столе</h1>
       <div class="rent__btn-container">
         <a href="{% url 'contacts' %}#cooperation" class="btn btn-light button_type_contact">Связаться с нами</a>
-        <a href="{%static './catalog/catalog.pdf' %}" download class="btn btn-dark">Скачать каталог</a>
+        {% for i in catalog %}
+        <a href="{{i.catalog.url}}" download class="btn btn-dark">Скачать каталог</a>
+        {% endfor %}
       </div>
     </div>
     <img src="{%static './images/welcome.png'%}" alt="" class="rent__image">

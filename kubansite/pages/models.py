@@ -1,6 +1,19 @@
 from django.db import models
 from django.urls import reverse
 
+class Catalog(models.Model):
+    catalog = models.FileField(verbose_name='Каталог',
+        blank=True,
+        upload_to='katalog/')
+    title = models.CharField(max_length=100, verbose_name='Название')
+
+    class Meta:
+        verbose_name = 'Каталог'
+        verbose_name_plural = 'Каталоги'
+
+    def __str__(self):
+        return self.title
+
 class WeightCategory(models.Model):
     title = models.CharField(max_length=100, verbose_name='фасовка')
     
