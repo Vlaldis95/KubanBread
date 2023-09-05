@@ -17,4 +17,5 @@
 ### Авторы-исполнители:
 - :white_check_mark: Владислав Лукьяненко (https://github.com/Vlaldis95/) - разработка backend-части проекта
 - :white_check_mark: Анатолий Чуднов (https://github.com/12-web) - разработка frontend-части проекта
-
+- :white_check_mark: Анна Мелкумова (https://www.behance.net/annamelq) - дизайн проекта
+- :white_check_mark: Мария Кабанова (https://www.behance.net/c6c2d449) - дизайн проекта
